@@ -1,0 +1,273 @@
+{
+  "version": 1,
+  "textures": {
+    "naiwa": {
+      "url": "/assets/naiwa.jpg",
+      "role": "gaze-pursuer-and-own-catch"
+    },
+    "kun": {
+      "url": "/assets/apartment/kun-chase.png",
+      "role": "pursuer-world-billboard"
+    },
+    "liang": {
+      "url": "/assets/liang.jpg",
+      "role": "listener-fallback-and-catch"
+    },
+    "inspector": {
+      "url": "/assets/apartment/inspector-cutout.png",
+      "role": "inspector-world-billboard"
+    },
+    "inspectorPortrait": {
+      "url": "/assets/apartment/inspector-portrait.webp",
+      "role": "framed-photograph"
+    },
+    "laodaPortrait": {
+      "url": "/assets/apartment/laoda-portrait.webp",
+      "role": "framed-photograph"
+    },
+    "chiangkaishekPortrait": {
+      "url": "/assets/apartment/chiangkaishek-portrait.webp",
+      "role": "framed-photograph"
+    },
+    "wangjingwei": {
+      "url": "/assets/apartment/wangjingwei-cutout.png",
+      "role": "patrol-world-and-framed-portraits"
+    },
+    "patrolScare": {
+      "url": "/assets/apartment/scares/wangjingwei-closeup.webp",
+      "role": "patrol-dedicated-catch"
+    },
+    "rushScare": {
+      "url": "/assets/apartment/scares/tenno-closeup.webp",
+      "role": "returner-dedicated-catch"
+    },
+    "patrolImpact": {
+      "url": "/assets/apartment/scares/wangjingwei-void-cutout.png",
+      "role": "patrol-impact-frame",
+      "source": "user-provided Vintage_Portrait_with_Void_Black_Eyes-removebg-preview.png; byte-identical RGBA"
+    },
+    "patrolImpactNightVision": {
+      "url": "/assets/apartment/scares/wangjingwei-night-vision.png",
+      "role": "patrol-alternate-impact-frame",
+      "source": "user-provided Eerie Green Night-Vision Portrait.png; byte-identical RGBA"
+    },
+    "rushImpact": {
+      "url": "/assets/apartment/scares/tenno-night-vision.png",
+      "role": "returner-impact-frame",
+      "source": "user-provided Night-Vision Haunted Imperial Portrait.png; byte-identical original"
+    },
+    "inspectorScare": {
+      "url": "/assets/apartment/scares/SunKongBu.png",
+      "role": "inspector-dedicated-catch"
+    },
+    "kunScare": {
+      "url": "/assets/apartment/scares/kunKunKongBu.png",
+      "role": "kun-dedicated-catch"
+    },
+    "floorPhoto": {
+      "url": "/assets/apartment/scares/sunTianHuang.png",
+      "role": "discarded-floor-photo-route-only"
+    },
+    "yujie": {
+      "url": "/assets/apartment/dongbeiyubigfeet.png",
+      "role": "stationary-sanity-encounter"
+    },
+    "yujieScare": {
+      "url": "/assets/apartment/dongbeiyubaifang-shadow.png",
+      "role": "yujie-dedicated-catch"
+    },
+    "naiwaScare": {
+      "url": "/assets/apartment/scares/naiwa-thinking.png",
+      "role": "naiwa-dedicated-catch"
+    },
+    "floorCixi": {
+      "url": "/assets/apartment/floor-cixi.png",
+      "role": "discarded-floor-photo-route-only"
+    },
+    "floorSun": {
+      "url": "/assets/sun.jpg",
+      "role": "discarded-monochrome-floor-photo-only"
+    },
+    "floorHirohito": {
+      "url": "/assets/apartment/floor-hirohito.jpg",
+      "role": "discarded-floor-photo-and-returner-world"
+    },
+    "floorThunder": {
+      "url": "/assets/apartment/floor-thunder.jpg",
+      "role": "discarded-floor-photo-route-only"
+    },
+    "gunmu": {
+      "url": "/assets/apartment/gunmu.png",
+      "role": "gunmu-chase",
+      "source": "user-provided images__8_-removebg-preview.png"
+    },
+    "gunmuScare": {
+      "url": "/assets/apartment/gunmu-scare.png",
+      "role": "gunmu-dedicated-catch"
+    }
+  },
+  "models": {
+    "milkyfrog-plaster": "/assets/apartment/milkyfrog-plaster.glb",
+    "suspender-mannequin": "/assets/apartment/suspender-mannequin.glb",
+    "jiangjieshi": "/assets/apartment/jiangjieshi.glb"
+  },
+  "characterModels": {
+    "inspector": {"url": "/assets/apartment/characters/SunXiaochuan.glb", "height": 2.15, "walk": "Eerie_Walk", "walkSpeed": 0.52},
+    "naiwa": {"url": "/assets/apartment/characters/NaiWa.glb", "height": 1.85, "walk": "Walk", "run": "Run", "walkSpeed": 0.8, "runSpeed": 1.8, "yaw": 1.5707963267948966},
+    "kun": {"url": "/assets/apartment/characters/Kun.glb", "height": 2.15, "run": "Chase_Run", "runSpeed": 3.85},
+    "rush": {"url": "/assets/apartment/characters/Tenno.glb", "height": 2.05},
+    "yujie": {"url": "/assets/apartment/characters/Yujie.glb", "height": 1.05},
+    "doubao": {"url": "/assets/apartment/characters/Gunmu.glb", "height": 2.25, "run": "Beast_Locomotion", "runSpeed": 4.05, "crawl": "Pipe_Crawl", "crawlSpeed": 1.9},
+    "liang": {"url": "/assets/apartment/characters/Liang.glb", "height": 2.15, "walk": "Heavy_Walk", "run": "Pursuit_Run", "listen": "Listen", "walkSpeed": 0.96, "runSpeed": 3.6}
+  },
+  "portraitInteractions": {
+    "f3-e2": "inspectorPortrait",
+    "f3-e4": "chiangkaishekPortrait",
+    "f3-e6": "laodaPortrait"
+  },
+  "excludedFromLoading": [
+    "JumpScare-Epstein.webp"
+  ],
+  "deferred": [
+    "thanos-jumpscare",
+    "kun-figurine"
+  ],
+  "cutoutStatus": "Current accepted versions; no further image refinement performed.",
+  "billboards": {
+    "rush": {"asset":"floorHirohito","bounds":[150,30,790,1269]},
+    "patrol": {
+      "asset": "wangjingwei",
+      "bounds": [
+        0,
+        0,
+        1085,
+        1450
+      ]
+    },
+    "yujie": {
+      "asset": "yujie",
+      "bounds": [
+        0,
+        0,
+        505,
+        494
+      ]
+    },
+    "kun": {
+      "asset": "kun",
+      "bounds": [
+        51,
+        0,
+        372,
+        526
+      ]
+    },
+    "doubao": {
+      "asset": "gunmu",
+      "bounds": [
+        0,
+        0,
+        209,
+        241
+      ]
+    }
+  },
+  "scares": {
+    "rush": {"asset":"rushScare","impactAsset":"rushImpact","model":{"url":"/assets/apartment/characters/tenno-scare.glb","clip":"TennoClawLunge"},"bounds":[0,0,1024,1024],"offset":[0,-0.02],"scale":0.63},
+    "inspector": {
+      "asset": "inspectorScare",
+      "bounds": [
+        60,
+        36,
+        389,
+        448
+      ],
+      "offset": [
+        0,
+        -0.85
+      ],
+      "scale": 1.25
+    },
+    "kun": {
+      "asset": "kunScare",
+      "bounds": [
+        225,
+        22,
+        457,
+        332
+      ],
+      "offset": [
+        0,
+        0.22
+      ],
+      "scale": 1
+    },
+    "patrol": {
+      "asset": "patrolScare",
+      "impactAsset": "patrolImpact",
+      "alternateImpact": {"asset":"patrolImpactNightVision","eyes":[0.44,0.367],"scale":0.82},
+      "model": {
+        "url": "/assets/apartment/characters/wang-scare.glb"
+      },
+      "bounds": [
+        0,
+        0,
+        1024,
+        1024
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "scale": 0.61
+    },
+    "yujie": {
+      "asset": "yujieScare",
+      "bounds": [
+        413,
+        148,
+        742,
+        642
+      ],
+      "offset": [
+        0,
+        -0.05
+      ],
+      "scale": 1.05
+    },
+    "naiwa": {
+      "asset": "naiwaScare",
+      "bounds": [
+        150,
+        10,
+        940,
+        700
+      ],
+      "offset": [
+        0,
+        -0.05
+      ],
+      "scale": 1.05
+    },
+    "doubao": {
+      "asset": "gunmuScare",
+      "bounds": [
+        300,
+        170,
+        1010,
+        945
+      ],
+      "offset": [
+        0,
+        -0.05
+      ],
+      "scale": 1.05
+    }
+  },
+  "floorPhotos": [
+    "floorPhoto",
+    "floorCixi",
+    "floorHirohito",
+    "floorThunder"
+  ]
+}

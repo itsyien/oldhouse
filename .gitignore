@@ -1,0 +1,17 @@
+node_modules/
+dist/
+work/
+outputs/
+.npmrc
+docs/
+tools/
+Start-Game.cmd
+Start-Game.ps1
+public/assets/kun.jpg
+public/assets/apartment/chiangkaishek-cutout.png
+public/assets/apartment/laoda-cutout.png
+public/assets/apartment/dongbeiyubaifang.png
+public/assets/apartment/dongbeiyubaifang-hd.png
+public/assets/apartment/doubao-shadow.png
+public/assets/apartment/models.json
+public/assets/apartment/stairs.json

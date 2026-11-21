@@ -1,0 +1,59 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"><meta name="theme-color" content="#101815"><link rel="icon" href="data:,"><title>The Old House</title></head>
+<body><div id="game-shell"><canvas id="game" aria-label="第一人称三维公寓场景"></canvas>
+<div id="inspector-pressure" aria-hidden="true"></div><div id="grain" aria-hidden="true"></div><div id="vignette" aria-hidden="true"></div><div id="fade" aria-hidden="true"></div><div id="scare" aria-hidden="true"></div><div id="peek" hidden aria-hidden="true"></div>
+<header id="hud" hidden><div class="hud-label">出口在楼下<span id="floor-label">08 / F</span><small id="checkpoint">继续点 · 8 楼</small><small id="scene-label" hidden></small><small id="floor-goal" hidden></small><div id="stamina" role="progressbar" aria-label="体力" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100"><small id="stamina-value"></small><div class="stamina-track"><i id="stamina-fill"></i></div></div><div id="sanity" role="progressbar" aria-label="理智" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100"><small id="sanity-value"></small><div class="sanity-track"><i id="sanity-fill"></i></div></div></div><div class="hud-actions"><button id="notes-button" aria-controls="code-notes" aria-expanded="false"><span class="desktop-only">Tab · 笔记</span><span class="mobile-only">笔记</span></button><button id="help-button"><span class="desktop-only">H · 规则</span><span class="mobile-only">规则</span></button><button id="pause-button" aria-label="暂停游戏">Ⅱ</button></div></header>
+<aside id="threat" hidden role="status" aria-live="polite"><span id="threat-name"></span><strong id="threat-action"></strong><div class="threat-track"><i id="threat-progress"></i></div></aside>
+<aside id="gunmu-tracker" hidden aria-label="棍母方位"><i id="gunmu-needle" aria-hidden="true"></i><div class="gunmu-range"><strong id="gunmu-range"></strong><small id="gunmu-elevation" hidden></small></div><div class="gunmu-glance"><kbd>Tab</kbd><span>按住回头</span></div></aside>
+<div id="inventory" hidden role="group" aria-label="随身道具"><output id="inventory-feedback" aria-live="polite" hidden></output><button data-slot="0" aria-pressed="true"><i aria-hidden="true"></i><span>空位</span></button><button data-slot="1" aria-pressed="false"><i aria-hidden="true"></i><span>空位</span></button><div id="inventory-status"><small id="inventory-controls">1 / 2 或滚轮切换 · 左键使用</small><output id="energy-status" hidden></output></div></div>
+<aside id="guide" hidden aria-label="通行提示"><strong>通行提示</strong><p id="guide-copy">在沿途的陈设里找密码。</p><small id="guide-controls" class="desktop-only">E 操作 · Tab 笔记 · H 规则</small><small id="touch-guide-controls" class="mobile-only">上推摇杆疾跑 · 右侧拖动观察</small></aside>
+<div id="crosshair" hidden aria-hidden="true"></div><div id="interact" hidden><kbd>E</kbd> <span>开门</span><div id="search-progress" hidden><i></i></div></div>
+<div id="keypad-marker" class="remote-marker" hidden aria-hidden="true"></div>
+<div id="subtitle" role="status" aria-live="polite"></div><div id="chapter" role="status"><span></span><strong></strong><p></p></div>
+<div id="touch-controls" hidden role="group" aria-label="触屏操作">
+ <div id="touch-stick" role="img" aria-label="移动摇杆"><i id="touch-stick-thumb" aria-hidden="true"></i></div>
+ <div class="touch-actions">
+  <button id="touch-glance" type="button" aria-label="按住回头" hidden>回头</button>
+  <button id="touch-interact" type="button" aria-disabled="true">操作</button>
+
+  <button id="touch-jump" type="button"><span>跳跃</span><small id="jump-unlock">一楼管道区开放</small></button>
+ </div>
+</div>
+<section id="menu" class="screen" aria-labelledby="game-title">
+<label class="language-picker menu-language">Language / 语言 <select id="language" aria-label="Language / 语言"><option value="en">English</option><option value="zh">中文</option></select></label>
+<main class="menu-main"><h1 id="game-title">旧宅</h1>
+<p class="intro">在废弃公寓里找密码，活着走到一楼。</p>
+<button id="start" class="primary" disabled>正在检查楼道… <span aria-hidden="true">↗</span></button><p id="load-status" class="small" role="status">准备场景与角色</p>
+<details id="floor-entry" hidden>
+ <summary>选择楼层进入</summary>
+ <p id="practice-note">自选楼层仅供练习，抵达出口也不计为正常通关。</p>
+ <div><select id="entry-floor" aria-label="起始楼层" aria-describedby="practice-note"></select><button id="enter-practice" type="button">进入练习</button></div>
+</details>
+</main></section>
+<section id="pause" class="screen modal" hidden aria-labelledby="pause-heading"><div class="modal-card"><small id="pause-floor"></small><h2 id="pause-heading">已暂停</h2><p id="capture-hint" class="small" role="status" hidden>浏览器未锁定鼠标。稍候点击「继续下楼」重试。</p><button id="resume" class="primary">继续下楼 <span aria-hidden="true">↗</span></button><details id="settings"><summary>设置</summary><div class="settings-fields"><label class="language-picker">Language / 语言 <select id="pause-language" aria-label="Language / 语言"><option value="en">English</option><option value="zh">中文</option></select></label><label>画面质量<select id="quality"><option value="medium">标准</option><option value="low">流畅</option><option value="high">高画质</option></select></label><label>总音量<input id="volume" type="range" min="0" max="100" value="35"></label><label>背景声音<input id="background" type="checkbox" checked></label><label>鼠标灵敏度<input id="sensitivity" type="range" min="20" max="150" value="65"></label><label id="sprint-setting" for="sprintSensitivity" hidden><span>疾跑触发距离 <output id="sprint-value" for="sprintSensitivity"></output></span><input id="sprintSensitivity" type="range" min="15" max="200" value="50"></label><label>步行镜头起伏<input id="bob" type="checkbox"></label><label>减少动态效果<input id="reduced" type="checkbox"></label></div></details><div class="pause-links"><button id="pause-help" class="secondary">规则与图鉴</button><button id="quit" class="secondary">返回入口</button></div></div></section>
+<section id="ending" class="screen modal" hidden aria-labelledby="end-title"><div class="modal-card">
+ <div id="end-en" class="eyebrow"></div><h2 id="end-title" tabindex="-1"></h2><p id="end-copy"></p>
+ <p id="practice-result" hidden></p>
+ <dl id="run-totals" hidden><div><dt>游玩时间</dt><dd id="run-time"></dd></div><div><dt>死亡次数</dt><dd id="run-deaths"></dd></div></dl>
+ <p id="end-stats"></p>
+ <details id="death-history" hidden><summary>死亡明细</summary><ol id="death-list"></ol></details>
+ <button id="restart" class="primary">再走一次 <span>↗</span></button><button id="new-run" class="secondary">重新开始一整局</button><button id="end-menu" class="secondary">返回入口</button>
+</div></section>
+
+<section id="rules" class="screen modal" hidden role="dialog" aria-modal="true" aria-labelledby="rules-title"><div class="rules-card">
+<h2 id="rules-title">住户手册</h2>
+<div class="guide-tabs"><button id="rules-basics" aria-controls="basic-guide" aria-pressed="true">通行须知</button><button id="rules-actors" aria-controls="actor-guide" aria-pressed="false">角色图鉴</button></div>
+<div id="basic-guide"><p>八楼是新手层，没有异常。先搜查值班室，再试试楼梯门的密码锁。</p><p>靠近抽屉或画像搜索，找到纸条后查看笔记，在门锁输入密码。</p><p>只有一楼的管道区可以跳跃。遇到可翻越的障碍，请按交互提示通过。</p><p class="rules-note"><span class="desktop-only">按 1 或 2 选择道具，也可滚轮切换。左键使用。</span><span class="mobile-only">点选道具，再点使用。</span></p></div>
+<div id="actor-guide" hidden><article><img loading="lazy" decoding="async" src="./assets/apartment/inspector-portrait.webp" alt=""><div><b>孙笑川 · 查房者</b><span>他在门口站了很久，像在等谁先动。</span></div></article><article><img loading="lazy" decoding="async" src="./assets/apartment/../naiwa.jpg" alt=""><div><b>奶娃 · 偷步者</b><span>刚才，它离墙上的裂缝还很远。</span></div></article><article><img loading="lazy" decoding="async" src="./assets/apartment/kun-chase.png" alt=""><div><b>坤坤 · 借路者</b><span>隔着两道门，地上已经有了绿光。</span></div></article><article><img loading="lazy" decoding="async" src="./assets/apartment/../liang.jpg" alt=""><div><b>良子</b><span>广播一响，货架间的脚步就换了方向。</span></div></article><article><img loading="lazy" decoding="async" src="./assets/apartment/wangjingwei-cutout.png" alt=""><div><b>汪精卫 · 巡楼者</b><span>他来之前，灯管会先失声。</span></div></article><article><img loading="lazy" decoding="async" src="./assets/apartment/floor-hirohito.jpg" alt=""><div><b>天皇 · 折返客</b><span>走廊静了。衣柜里的人还在等。</span></div></article><article><img loading="lazy" decoding="async" src="./assets/apartment/dongbeiyubigfeet.png" alt=""><div><b>东北雨姐</b><span>白光里站着一个人，影子比她先被看见。</span></div></article><article><img loading="lazy" decoding="async" src="./assets/apartment/gunmu.png" alt=""><div><b>棍母</b><span>铁管底下也有脚步声。</span></div></article><article><i class="door-print" aria-hidden="true"></i><div><b>假门</b><span>旧漆遮住了门牌的最后一位。</span></div></article></div>
+<footer><span class="desktop-only">WASD 移动 · 鼠标观察 · Shift 冲刺 · E 操作 · 空格跳跃或翻越 · Esc 暂停</span><span id="touch-rules-controls" class="mobile-only">上推摇杆疾跑。使用键优先交互，空闲时使用所选道具。</span><div><button id="rules-continue" class="primary">返回游戏 <span>↗</span></button></div></footer>
+</div></section>
+<aside id="code-notes" hidden aria-labelledby="notes-title"><header><h2 id="notes-title">密码笔记</h2><kbd>Tab</kbd></header>
+<p id="notes-floor"></p><output id="notes-digits"></output><p id="notes-hint"></p><footer>翻看时，时间仍在流动。</footer></aside>
+<i id="panel-pointer" hidden aria-hidden="true"></i>
+<section id="keypad" hidden role="dialog" aria-labelledby="keypad-title" tabindex="-1">
+<header><div><small id="keypad-floor"></small><h2 id="keypad-title">楼梯门锁</h2></div><button id="keypad-close" aria-label="关闭键盘"><span class="desktop-only">E</span><span class="mobile-only" aria-hidden="true">×</span></button></header>
+<div class="keypad-notebook"><span id="keypad-note-label">密码笔记</span><output id="keypad-note" aria-labelledby="keypad-note-label"></output></div>
+<output id="keypad-display" aria-label="已输入的数字"></output><p id="keypad-feedback" aria-live="polite"></p>
+<div id="keypad-keys"><button type="button" data-pad="1">1</button><button type="button" data-pad="2">2</button><button type="button" data-pad="3">3</button><button type="button" data-pad="4">4</button><button type="button" data-pad="5">5</button><button type="button" data-pad="6">6</button><button type="button" data-pad="7">7</button><button type="button" data-pad="8">8</button><button type="button" data-pad="9">9</button><button data-pad="Backspace" aria-label="删除一位">⌫</button><button data-pad="0">0</button><button data-pad="Enter" class="pad-enter">确认</button></div>
+</section></div>
+
+<script type="module" src="/src/main.js"></script></body></html>

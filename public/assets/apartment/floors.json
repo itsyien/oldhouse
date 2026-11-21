@@ -1,0 +1,3265 @@
+{
+  "schemaVersion": 1,
+  "stage": "preproduction-not-runtime",
+  "stairModule": "stairs.json",
+  "units": "meters",
+  "footprint": [
+    36,
+    32
+  ],
+  "floorRise": 3.24,
+  "lightwell": {
+    "x": 11,
+    "z": 11,
+    "w": 14,
+    "d": 10
+  },
+  "closedService": {
+    "x": 2,
+    "z": 13,
+    "w": 9,
+    "d": 6
+  },
+  "stairCores": [
+    {
+      "id": "A",
+      "x": 2,
+      "z": 2,
+      "w": 6,
+      "d": 9
+    },
+    {
+      "id": "B",
+      "x": 2,
+      "z": 21,
+      "w": 6,
+      "d": 9
+    }
+  ],
+  "stair": {
+    "flights": 2,
+    "risersPerFlight": 9,
+    "riser": 0.18,
+    "tread": 0.28,
+    "clearWidth": 1.25,
+    "landingDepth": 1.35,
+    "transition": "at obscured half landing; preserve local position, yaw and descent direction",
+    "heightEvaluation": "inside staircase polygon only"
+  },
+  "links": [
+    {
+      "from": [
+        5,
+        "B"
+      ],
+      "to": [
+        4,
+        "B"
+      ]
+    },
+    {
+      "from": [
+        4,
+        "A"
+      ],
+      "to": [
+        3,
+        "A"
+      ]
+    },
+    {
+      "from": [
+        3,
+        "B"
+      ],
+      "to": [
+        2,
+        "B"
+      ]
+    },
+    {
+      "from": [
+        2,
+        "A"
+      ],
+      "to": [
+        1,
+        "A"
+      ]
+    }
+  ],
+  "closedFlights": "Unused inter-floor flights have permanent construction grilles visible from the landing; no keys or switches required. Both core footprints remain fixed on all floors.",
+  "floors": [
+    {
+      "id": 5,
+      "title": "停用的顶层住区",
+      "tag": "残留生活",
+      "landmark": "天井边的绿色旧沙发",
+      "zones": [
+        {
+          "label": "旧客厅",
+          "x": 8.5,
+          "z": 2,
+          "w": 13.5,
+          "d": 9
+        },
+        {
+          "label": "封闭住户 / 杂物",
+          "x": 22,
+          "z": 2,
+          "w": 12,
+          "d": 9
+        },
+        {
+          "label": "天井东廊",
+          "x": 25,
+          "z": 11,
+          "w": 9,
+          "d": 10
+        },
+        {
+          "label": "南侧住区",
+          "x": 8.5,
+          "z": 21,
+          "w": 25.5,
+          "d": 9
+        }
+      ],
+      "color": "#74816a",
+      "note": "第一眼仍然像有人住。沙发上的凹陷、观察孔后的轮廓，只在玩家移开视线后变化。",
+      "interactions": [
+        {
+          "id": "f5-e1",
+          "label": "客厅开关",
+          "x": 11,
+          "z": 6,
+          "feedback": "开关改变局部照明；故障灯仍可能缓慢变暗",
+          "key": "E",
+          "persistentUntil": "checkpoint-reset"
+        },
+        {
+          "id": "f5-e2",
+          "label": "502 观察孔",
+          "x": 19,
+          "z": 9,
+          "feedback": "门外轮廓随视角变化，不直接触发抓捕",
+          "key": "E",
+          "persistentUntil": "checkpoint-reset"
+        },
+        {
+          "id": "f5-e3",
+          "label": "信箱",
+          "x": 11,
+          "z": 25,
+          "feedback": "打开后留下开启状态；内部保留旧住户姓名",
+          "key": "E",
+          "persistentUntil": "checkpoint-reset"
+        },
+        {
+          "id": "f5-e4",
+          "label": "南窗窗帘",
+          "x": 18,
+          "z": 26.4,
+          "feedback": "拉开露出天井中的另一扇亮窗",
+          "key": "E",
+          "persistentUntil": "checkpoint-reset"
+        },
+        {
+          "id": "f5-e5",
+          "label": "旧电视",
+          "x": 28,
+          "z": 8.5,
+          "feedback": "按键、指示灯与画面同时反馈",
+          "key": "E",
+          "persistentUntil": "checkpoint-reset"
+        }
+      ],
+      "props": [
+        {
+          "model": "suspender-mannequin",
+          "x": 26,
+          "z": 7.8,
+          "yaw": 3.141592653589793,
+          "radius": 0.47600000000000003,
+          "footprint": {
+            "x": 25.524,
+            "z": 7.46,
+            "w": 0.9520000000000001,
+            "d": 0.6800000000000002
+          },
+          "offscreenOnly": true,
+          "blocksEscape": false
+        }
+      ],
+      "event": "一张椅子从面向电视变成面向玩家来路。",
+      "walkableRects": [
+        {
+          "x": 2,
+          "z": 2,
+          "w": 32,
+          "d": 9
+        },
+        {
+          "x": 2,
+          "z": 21,
+          "w": 32,
+          "d": 9
+        },
+        {
+          "x": 25,
+          "z": 11,
+          "w": 9,
+          "d": 10
+        },
+        {
+          "x": 2,
+          "z": 11,
+          "w": 9,
+          "d": 2
+        },
+        {
+          "x": 2,
+          "z": 19,
+          "w": 9,
+          "d": 2
+        }
+      ],
+      "walls": [
+        {
+          "x": 8.1,
+          "z": 2,
+          "w": 0.25,
+          "d": 4.8
+        },
+        {
+          "x": 8.1,
+          "z": 9.2,
+          "w": 0.25,
+          "d": 1.8
+        },
+        {
+          "x": 8.1,
+          "z": 21,
+          "w": 0.25,
+          "d": 1.8
+        },
+        {
+          "x": 8.1,
+          "z": 25.2,
+          "w": 0.25,
+          "d": 4.8
+        },
+        {
+          "x": 10,
+          "z": 5,
+          "w": 21.2,
+          "d": 0.2,
+          "material": "plaster"
+        },
+        {
+          "x": 10,
+          "z": 5,
+          "w": 0.2,
+          "d": 8,
+          "material": "plaster"
+        },
+        {
+          "x": 10,
+          "z": 27,
+          "w": 21.2,
+          "d": 0.2,
+          "material": "plaster"
+        },
+        {
+          "x": 10,
+          "z": 19,
+          "w": 0.2,
+          "d": 8,
+          "material": "plaster"
+        },
+        {
+          "x": 22,
+          "z": 2,
+          "w": 0.2,
+          "d": 0.8
+        },
+        {
+          "x": 22,
+          "z": 5.2,
+          "w": 0.2,
+          "d": 2.8
+        },
+        {
+          "x": 22,
+          "z": 10,
+          "w": 0.2,
+          "d": 1
+        },
+        {
+          "x": 29,
+          "z": 11,
+          "w": 0.2,
+          "d": 2
+        },
+        {
+          "x": 29,
+          "z": 17,
+          "w": 0.2,
+          "d": 4
+        },
+        {
+          "x": 23,
+          "z": 21,
+          "w": 0.2,
+          "d": 1.5
+        },
+        {
+          "x": 23,
+          "z": 25,
+          "w": 0.2,
+          "d": 1.8
+        },
+        {
+          "x": 23,
+          "z": 29.2,
+          "w": 0.2,
+          "d": 0.8
+        }
+      ],
+      "furniture": [
+        {
+          "name": "沙发",
+          "x": 14,
+          "z": 6.5,
+          "w": 4,
+          "d": 1.1
+        },
+        {
+          "name": "矮柜",
+          "x": 20.3,
+          "z": 6.3,
+          "w": 1.2,
+          "d": 2.8
+        },
+        {
+          "name": "杂物",
+          "x": 25,
+          "z": 5.8,
+          "w": 2,
+          "d": 1.5
+        },
+        {
+          "name": "封闭门斗",
+          "x": 10.4,
+          "z": 10,
+          "w": 3,
+          "d": 0.8
+        },
+        {
+          "name": "鞋架",
+          "x": 18,
+          "z": 23,
+          "w": 2,
+          "d": 0.7
+        },
+        {
+          "name": "旧桌",
+          "x": 28.1,
+          "z": 25,
+          "w": 1.6,
+          "d": 1.2
+        }
+      ],
+      "mainRoute": [
+        [
+          8.6,
+          8
+        ],
+        [
+          9,
+          8
+        ],
+        [
+          9,
+          4
+        ],
+        [
+          32,
+          4
+        ],
+        [
+          32,
+          28
+        ],
+        [
+          9,
+          28
+        ],
+        [
+          9,
+          24
+        ],
+        [
+          8.6,
+          24
+        ]
+      ],
+      "alternateRoute": [
+        [
+          32,
+          9
+        ],
+        [
+          27,
+          9
+        ],
+        [
+          27,
+          23
+        ],
+        [
+          32,
+          23
+        ]
+      ],
+      "branch": [
+        [
+          32,
+          9.6
+        ],
+        [
+          24,
+          9.6
+        ],
+        [
+          24,
+          8.5
+        ]
+      ],
+      "lights": [
+        {
+          "id": "f5-l1",
+          "x": 10,
+          "z": 3,
+          "faulty": false,
+          "realtimePriority": 0
+        },
+        {
+          "id": "f5-l2",
+          "x": 13,
+          "z": 3,
+          "faulty": false,
+          "realtimePriority": 1
+        },
+        {
+          "id": "f5-l3",
+          "x": 16,
+          "z": 3,
+          "faulty": false,
+          "realtimePriority": 2
+        },
+        {
+          "id": "f5-l4",
+          "x": 19,
+          "z": 3,
+          "faulty": true,
+          "realtimePriority": 3
+        },
+        {
+          "id": "f5-l5",
+          "x": 22,
+          "z": 3,
+          "faulty": false,
+          "realtimePriority": 0
+        },
+        {
+          "id": "f5-l6",
+          "x": 25,
+          "z": 3,
+          "faulty": false,
+          "realtimePriority": 1
+        },
+        {
+          "id": "f5-l7",
+          "x": 28,
+          "z": 3,
+          "faulty": false,
+          "realtimePriority": 2
+        },
+        {
+          "id": "f5-l8",
+          "x": 31,
+          "z": 3,
+          "faulty": false,
+          "realtimePriority": 3
+        },
+        {
+          "id": "f5-l9",
+          "x": 32,
+          "z": 6,
+          "faulty": false,
+          "realtimePriority": 0
+        },
+        {
+          "id": "f5-l10",
+          "x": 32,
+          "z": 9,
+          "faulty": false,
+          "realtimePriority": 1
+        },
+        {
+          "id": "f5-l11",
+          "x": 32,
+          "z": 12,
+          "faulty": false,
+          "realtimePriority": 2
+        },
+        {
+          "id": "f5-l12",
+          "x": 32,
+          "z": 15,
+          "faulty": false,
+          "realtimePriority": 3
+        },
+        {
+          "id": "f5-l13",
+          "x": 32,
+          "z": 18,
+          "faulty": true,
+          "realtimePriority": 0
+        },
+        {
+          "id": "f5-l14",
+          "x": 32,
+          "z": 21,
+          "faulty": false,
+          "realtimePriority": 1
+        },
+        {
+          "id": "f5-l15",
+          "x": 32,
+          "z": 24,
+          "faulty": false,
+          "realtimePriority": 2
+        },
+        {
+          "id": "f5-l16",
+          "x": 32,
+          "z": 27,
+          "faulty": false,
+          "realtimePriority": 3
+        },
+        {
+          "id": "f5-l17",
+          "x": 10,
+          "z": 29,
+          "faulty": false,
+          "realtimePriority": 0
+        },
+        {
+          "id": "f5-l18",
+          "x": 13,
+          "z": 29,
+          "faulty": false,
+          "realtimePriority": 1
+        },
+        {
+          "id": "f5-l19",
+          "x": 16,
+          "z": 29,
+          "faulty": false,
+          "realtimePriority": 2
+        },
+        {
+          "id": "f5-l20",
+          "x": 19,
+          "z": 29,
+          "faulty": false,
+          "realtimePriority": 3
+        },
+        {
+          "id": "f5-l21",
+          "x": 22,
+          "z": 29,
+          "faulty": true,
+          "realtimePriority": 0
+        },
+        {
+          "id": "f5-l22",
+          "x": 25,
+          "z": 29,
+          "faulty": false,
+          "realtimePriority": 1
+        },
+        {
+          "id": "f5-l23",
+          "x": 28,
+          "z": 29,
+          "faulty": false,
+          "realtimePriority": 2
+        },
+        {
+          "id": "f5-l24",
+          "x": 31,
+          "z": 29,
+          "faulty": false,
+          "realtimePriority": 3
+        }
+      ],
+      "doors": [
+        {
+          "id": "A",
+          "x": 8.2,
+          "z": 8,
+          "width": 2.4,
+          "kind": "fire",
+          "swing": "into-stair"
+        },
+        {
+          "id": "B",
+          "x": 8.2,
+          "z": 24,
+          "width": 2.4,
+          "kind": "fire",
+          "swing": "into-stair"
+        },
+        {
+          "id": "north-room",
+          "x": 22.1,
+          "z": 4,
+          "width": 2.4,
+          "kind": "wood",
+          "secondExit": [
+            22.1,
+            9
+          ]
+        },
+        {
+          "id": "east-partition",
+          "x": 29.1,
+          "z": 15,
+          "width": 4,
+          "kind": "open"
+        }
+      ],
+      "metrics": {
+        "walkableArea": 663.44,
+        "mainRouteLength": 78.8,
+        "shortestRouteLength": 75.24,
+        "alternateRouteLength": 24,
+        "units": "meters",
+        "areaMethod": "0.25 m grid; floor/stair projection union minus partitions, fixed furniture, transformed GLB footprints; courtyard and closed western service strip excluded"
+      },
+      "validation": {
+        "mainPassable": true,
+        "alternatePassable": true,
+        "branchPassable": true,
+        "allInteractionsReachable": true,
+        "connectedWalkable": true,
+        "reachableRatio": 1,
+        "playerRadius": 0.3,
+        "gridResolution": 0.25
+      },
+      "windows": [],
+      "exteriorDoor": null,
+      "sightline": null,
+      "checkpoint": true,
+      "arrival": "A",
+      "departure": "B"
+    },
+    {
+      "id": 4,
+      "title": "公共生活区",
+      "tag": "不完整的人影",
+      "landmark": "一排停转的洗衣机",
+      "zones": [
+        {
+          "label": "公共厨房",
+          "x": 8.5,
+          "z": 2,
+          "w": 13.5,
+          "d": 9
+        },
+        {
+          "label": "洗衣房",
+          "x": 22,
+          "z": 2,
+          "w": 30,
+          "d": 9
+        },
+        {
+          "label": "晾晒间",
+          "x": 43,
+          "z": 11,
+          "w": 9,
+          "d": 10
+        },
+        {
+          "label": "盥洗与储物",
+          "x": 8.5,
+          "z": 21,
+          "w": 43.5,
+          "d": 9
+        }
+      ],
+      "color": "#74858a",
+      "note": "两条通路被晾晒物隔开。危险轮廓与灯光一起移动，普通灯具故障仍保持局部。",
+      "interactions": [
+        {
+          "id": "f4-e1",
+          "label": "厨房开关",
+          "x": 11,
+          "z": 6,
+          "feedback": "控制灶台灯和相邻灯管",
+          "key": "E",
+          "persistentUntil": "checkpoint-reset"
+        },
+        {
+          "id": "f4-e2",
+          "label": "洗衣机门",
+          "x": 44,
+          "z": 8.5,
+          "feedback": "打开时露出内筒；不会每次出现异常",
+          "key": "E",
+          "persistentUntil": "checkpoint-reset"
+        },
+        {
+          "id": "f4-e3",
+          "label": "晾晒隔断",
+          "x": 46,
+          "z": 14.5,
+          "feedback": "改变视线，不横跨主逃生通道",
+          "key": "E",
+          "persistentUntil": "checkpoint-reset"
+        },
+        {
+          "id": "f4-e4",
+          "label": "湿窗窗帘",
+          "x": 45,
+          "z": 19,
+          "feedback": "可看见隔窗后没有完整身体的影子",
+          "key": "E",
+          "persistentUntil": "checkpoint-reset"
+        },
+        {
+          "id": "f4-e5",
+          "label": "盥洗灯",
+          "x": 15,
+          "z": 25,
+          "feedback": "正常开关与灯管故障分开",
+          "key": "E",
+          "persistentUntil": "checkpoint-reset"
+        },
+        {
+          "id": "f4-e6",
+          "label": "储物柜",
+          "x": 21,
+          "z": 24,
+          "feedback": "开门后占用预留凹位，不堵路",
+          "key": "E",
+          "persistentUntil": "checkpoint-reset"
+        }
+      ],
+      "props": [],
+      "event": "玻璃上有完整人影，拉开帘子却只剩湿脚印。",
+      "walkableRects": [
+        {
+          "x": 2,
+          "z": 2,
+          "w": 50,
+          "d": 9
+        },
+        {
+          "x": 2,
+          "z": 21,
+          "w": 50,
+          "d": 9
+        },
+        {
+          "x": 43,
+          "z": 11,
+          "w": 9,
+          "d": 10
+        },
+        {
+          "x": 2,
+          "z": 11,
+          "w": 9,
+          "d": 2
+        },
+        {
+          "x": 2,
+          "z": 19,
+          "w": 9,
+          "d": 2
+        }
+      ],
+      "walls": [
+        {
+          "x": 8.1,
+          "z": 2,
+          "w": 0.25,
+          "d": 4.8
+        },
+        {
+          "x": 8.1,
+          "z": 9.2,
+          "w": 0.25,
+          "d": 1.8
+        },
+        {
+          "x": 8.1,
+          "z": 21,
+          "w": 0.25,
+          "d": 1.8
+        },
+        {
+          "x": 8.1,
+          "z": 25.2,
+          "w": 0.25,
+          "d": 4.8
+        },
+        {
+          "x": 10,
+          "z": 5,
+          "w": 39.2,
+          "d": 0.2,
+          "material": "plaster"
+        },
+        {
+          "x": 10,
+          "z": 5,
+          "w": 0.2,
+          "d": 8,
+          "material": "plaster"
+        },
+        {
+          "x": 10,
+          "z": 19,
+          "w": 0.2,
+          "d": 8,
+          "material": "plaster"
+        },
+        {
+          "x": 22,
+          "z": 2,
+          "w": 0.2,
+          "d": 0.8
+        },
+        {
+          "x": 22,
+          "z": 5.2,
+          "w": 0.2,
+          "d": 2.8
+        },
+        {
+          "x": 22,
+          "z": 10,
+          "w": 0.2,
+          "d": 1
+        },
+        {
+          "x": 47,
+          "z": 11,
+          "w": 0.2,
+          "d": 2
+        },
+        {
+          "x": 47,
+          "z": 17,
+          "w": 0.2,
+          "d": 4
+        },
+        {
+          "x": 23,
+          "z": 21,
+          "w": 0.2,
+          "d": 1.5
+        },
+        {
+          "x": 23,
+          "z": 25,
+          "w": 0.2,
+          "d": 1.8
+        },
+        {
+          "x": 23,
+          "z": 29.2,
+          "w": 0.2,
+          "d": 0.8
+        },
+        {
+          "x": 33,
+          "z": 6.7,
+          "w": 0.2,
+          "d": 2.9,
+          "material": "plaster"
+        },
+        {
+          "x": 39,
+          "z": 6.7,
+          "w": 0.2,
+          "d": 2.9,
+          "material": "plaster"
+        },
+        {
+          "x": 32,
+          "z": 22.3,
+          "w": 0.2,
+          "d": 3.2,
+          "material": "plaster"
+        },
+        {
+          "x": 39,
+          "z": 22.3,
+          "w": 0.2,
+          "d": 3.2,
+          "material": "plaster"
+        },
+        {
+          "x": 32,
+          "z": 2,
+          "w": 0.24,
+          "d": 1.2,
+          "material": "plaster"
+        },
+        {
+          "x": 39,
+          "z": 3.7,
+          "w": 0.24,
+          "d": 1.3,
+          "material": "plaster"
+        },
+        {
+          "x": 34,
+          "z": 27,
+          "w": 0.24,
+          "d": 1.2,
+          "material": "plaster"
+        },
+        {
+          "x": 41,
+          "z": 28.8,
+          "w": 0.24,
+          "d": 1.2,
+          "material": "plaster"
+        },
+        {
+          "x": 10,
+          "z": 27,
+          "w": 34,
+          "d": 0.2,
+          "material": "plaster"
+        },
+        {
+          "x": 46,
+          "z": 27,
+          "w": 3.200000000000003,
+          "d": 0.2,
+          "material": "plaster"
+        }
+      ],
+      "furniture": [
+        {
+          "name": "灶台",
+          "x": 12,
+          "z": 6.8,
+          "w": 5,
+          "d": 1.1
+        },
+        {
+          "name": "水池",
+          "x": 19.2,
+          "z": 6.5,
+          "w": 1.1,
+          "d": 2.4
+        },
+        {
+          "name": "洗衣机",
+          "x": 24,
+          "z": 6.1,
+          "w": 4,
+          "d": 1.2
+        },
+        {
+          "name": "晾衣架",
+          "x": 47.8,
+          "z": 14,
+          "w": 1,
+          "d": 3
+        },
+        {
+          "name": "盥洗台",
+          "x": 12,
+          "z": 23,
+          "w": 6,
+          "d": 1.1
+        },
+        {
+          "name": "储物柜",
+          "x": 43,
+          "z": 23.5,
+          "w": 1.2,
+          "d": 2
+        },
+        {
+          "name": "洗衣机",
+          "x": 29,
+          "z": 6.3,
+          "w": 4,
+          "d": 1.05
+        },
+        {
+          "name": "储物柜",
+          "x": 29.3,
+          "z": 23.2,
+          "w": 1,
+          "d": 2.8
+        },
+        {
+          "name": "洗衣机",
+          "x": 35,
+          "z": 6.3,
+          "w": 4,
+          "d": 1.05
+        },
+        {
+          "name": "储物柜",
+          "x": 35.3,
+          "z": 23.2,
+          "w": 1,
+          "d": 2.8
+        },
+        {
+          "name": "洗衣机",
+          "x": 41,
+          "z": 6.3,
+          "w": 4,
+          "d": 1.05
+        },
+        {
+          "name": "储物柜",
+          "x": 41.3,
+          "z": 23.2,
+          "w": 1,
+          "d": 2.8
+        },
+        {
+          "name": "洗衣推车",
+          "x": 47.2,
+          "z": 25.1,
+          "w": 1.3,
+          "d": 0.9
+        }
+      ],
+      "mainRoute": [
+        [
+          8.6,
+          24
+        ],
+        [
+          9,
+          24
+        ],
+        [
+          9,
+          28
+        ],
+        [
+          45,
+          28
+        ],
+        [
+          45,
+          24.5
+        ],
+        [
+          50,
+          24.5
+        ],
+        [
+          50,
+          4
+        ],
+        [
+          9,
+          4
+        ],
+        [
+          9,
+          8
+        ],
+        [
+          8.6,
+          8
+        ]
+      ],
+      "alternateRoute": [
+        [
+          32,
+          9
+        ],
+        [
+          27,
+          9
+        ],
+        [
+          27,
+          23
+        ],
+        [
+          32,
+          23
+        ]
+      ],
+      "branch": [
+        [
+          32,
+          9.6
+        ],
+        [
+          24,
+          9.6
+        ],
+        [
+          24,
+          8.5
+        ]
+      ],
+      "lights": [
+        {
+          "id": "f4-l1",
+          "x": 10,
+          "z": 3,
+          "faulty": false,
+          "realtimePriority": 0
+        },
+        {
+          "id": "f4-l2",
+          "x": 13,
+          "z": 3,
+          "faulty": false,
+          "realtimePriority": 1
+        },
+        {
+          "id": "f4-l3",
+          "x": 16,
+          "z": 3,
+          "faulty": false,
+          "realtimePriority": 2
+        },
+        {
+          "id": "f4-l4",
+          "x": 19,
+          "z": 3,
+          "faulty": true,
+          "realtimePriority": 3
+        },
+        {
+          "id": "f4-l5",
+          "x": 22,
+          "z": 3,
+          "faulty": false,
+          "realtimePriority": 0
+        },
+        {
+          "id": "f4-l6",
+          "x": 25,
+          "z": 3,
+          "faulty": false,
+          "realtimePriority": 1
+        },
+        {
+          "id": "f4-l7",
+          "x": 28,
+          "z": 3,
+          "faulty": false,
+          "realtimePriority": 2
+        },
+        {
+          "id": "f4-l8",
+          "x": 31,
+          "z": 3,
+          "faulty": false,
+          "realtimePriority": 3
+        },
+        {
+          "id": "f4-l9",
+          "x": 32,
+          "z": 6,
+          "faulty": false,
+          "realtimePriority": 0
+        },
+        {
+          "id": "f4-l10",
+          "x": 32,
+          "z": 9,
+          "faulty": false,
+          "realtimePriority": 1
+        },
+        {
+          "id": "f4-l11",
+          "x": 32,
+          "z": 12,
+          "faulty": false,
+          "realtimePriority": 2
+        },
+        {
+          "id": "f4-l12",
+          "x": 32,
+          "z": 15,
+          "faulty": false,
+          "realtimePriority": 3
+        },
+        {
+          "id": "f4-l13",
+          "x": 32,
+          "z": 18,
+          "faulty": true,
+          "realtimePriority": 0
+        },
+        {
+          "id": "f4-l14",
+          "x": 32,
+          "z": 21,
+          "faulty": false,
+          "realtimePriority": 1
+        },
+        {
+          "id": "f4-l15",
+          "x": 32,
+          "z": 24,
+          "faulty": false,
+          "realtimePriority": 2
+        },
+        {
+          "id": "f4-l16",
+          "x": 32,
+          "z": 27,
+          "faulty": false,
+          "realtimePriority": 3
+        },
+        {
+          "id": "f4-l17",
+          "x": 10,
+          "z": 29,
+          "faulty": false,
+          "realtimePriority": 0
+        },
+        {
+          "id": "f4-l18",
+          "x": 13,
+          "z": 29,
+          "faulty": false,
+          "realtimePriority": 1
+        },
+        {
+          "id": "f4-l19",
+          "x": 16,
+          "z": 29,
+          "faulty": false,
+          "realtimePriority": 2
+        },
+        {
+          "id": "f4-l20",
+          "x": 19,
+          "z": 29,
+          "faulty": false,
+          "realtimePriority": 3
+        },
+        {
+          "id": "f4-l21",
+          "x": 22,
+          "z": 29,
+          "faulty": true,
+          "realtimePriority": 0
+        },
+        {
+          "id": "f4-l22",
+          "x": 25,
+          "z": 29,
+          "faulty": false,
+          "realtimePriority": 1
+        },
+        {
+          "id": "f4-l23",
+          "x": 28,
+          "z": 29,
+          "faulty": false,
+          "realtimePriority": 2
+        },
+        {
+          "id": "f4-l24",
+          "x": 31,
+          "z": 29,
+          "faulty": false,
+          "realtimePriority": 3
+        }
+      ],
+      "doors": [
+        {
+          "id": "A",
+          "x": 8.2,
+          "z": 8,
+          "width": 2.4,
+          "kind": "fire",
+          "swing": "into-stair"
+        },
+        {
+          "id": "B",
+          "x": 8.2,
+          "z": 24,
+          "width": 2.4,
+          "kind": "fire",
+          "swing": "into-stair"
+        },
+        {
+          "id": "north-room",
+          "x": 22.1,
+          "z": 4,
+          "width": 2.4,
+          "kind": "wood",
+          "secondExit": [
+            22.1,
+            9
+          ]
+        },
+        {
+          "id": "east-partition",
+          "x": 29.1,
+          "z": 15,
+          "width": 4,
+          "kind": "curtain"
+        }
+      ],
+      "metrics": {
+        "walkableArea": 655.31,
+        "mainRouteLength": 78.8,
+        "shortestRouteLength": 75.24,
+        "alternateRouteLength": 24,
+        "units": "meters",
+        "areaMethod": "0.25 m grid; floor/stair projection union minus partitions, fixed furniture, transformed GLB footprints; courtyard and closed western service strip excluded"
+      },
+      "validation": {
+        "mainPassable": true,
+        "alternatePassable": true,
+        "branchPassable": true,
+        "allInteractionsReachable": true,
+        "connectedWalkable": true,
+        "reachableRatio": 1,
+        "playerRadius": 0.3,
+        "gridResolution": 0.25
+      },
+      "windows": [],
+      "exteriorDoor": null,
+      "sightline": null,
+      "checkpoint": false,
+      "arrival": "B",
+      "departure": "A",
+      "eastExtension": 18,
+      "wardrobePositions": [
+        [
+          0,
+          14,
+          2.5,
+          0
+        ],
+        [
+          1,
+          36,
+          2.5,
+          0
+        ],
+        [
+          2,
+          51.5,
+          17.8,
+          -1.5707963267948966
+        ],
+        [
+          3,
+          40,
+          29.5,
+          3.141592653589793
+        ]
+      ],
+      "wingLights": [
+        [
+          30,
+          3.7
+        ],
+        [
+          30,
+          8.5
+        ],
+        [
+          30,
+          23
+        ],
+        [
+          30,
+          28.5
+        ],
+        [
+          36,
+          3.7
+        ],
+        [
+          36,
+          8.5
+        ],
+        [
+          36,
+          23
+        ],
+        [
+          36,
+          28.5
+        ],
+        [
+          42,
+          3.7
+        ],
+        [
+          42,
+          8.5
+        ],
+        [
+          42,
+          23
+        ],
+        [
+          42,
+          28.5
+        ]
+      ]
+    },
+    {
+      "id": 3,
+      "title": "旧活动与资料区",
+      "tag": "失去对应",
+      "landmark": "三幅尺寸不一的黑白画像",
+      "zones": [
+        {
+          "label": "阅览室",
+          "x": 8.5,
+          "z": 2,
+          "w": 13.5,
+          "d": 9
+        },
+        {
+          "label": "旧活动室",
+          "x": 22,
+          "z": 2,
+          "w": 24,
+          "d": 9
+        },
+        {
+          "label": "画像回廊",
+          "x": 37,
+          "z": 11,
+          "w": 9,
+          "d": 10
+        },
+        {
+          "label": "物业资料间",
+          "x": 8.5,
+          "z": 21,
+          "w": 37.5,
+          "d": 9
+        }
+      ],
+      "color": "#8a806b",
+      "note": "先建立画框与人物的对应。异常出现时，空画框和远端人影同时可见，玩家可自行发现联系。",
+      "interactions": [
+        {
+          "id": "f3-e1",
+          "label": "阅览灯",
+          "x": 11,
+          "z": 6,
+          "feedback": "给画面和桌面同时补光",
+          "key": "E",
+          "persistentUntil": "checkpoint-reset"
+        },
+        {
+          "id": "f3-e2",
+          "label": "新查房者画像",
+          "x": 19,
+          "z": 9.5,
+          "feedback": "近看原图细节；后续人物版使用相同资产 ID",
+          "key": "E",
+          "persistentUntil": "checkpoint-reset"
+        },
+        {
+          "id": "f3-e3",
+          "label": "旧电视",
+          "x": 26,
+          "z": 8.5,
+          "feedback": "雪花切换到固定静帧，保留明确电源反馈",
+          "key": "E",
+          "persistentUntil": "checkpoint-reset"
+        },
+        {
+          "id": "f3-e4",
+          "label": "蒋介石画像",
+          "x": 39,
+          "z": 16,
+          "feedback": "按原比例小幅装框，不拉成整面墙",
+          "key": "E",
+          "persistentUntil": "checkpoint-reset"
+        },
+        {
+          "id": "f3-e5",
+          "label": "资料柜",
+          "x": 16,
+          "z": 25,
+          "feedback": "柜门有开关状态和纸张位移",
+          "key": "E",
+          "persistentUntil": "checkpoint-reset"
+        },
+        {
+          "id": "f3-e6",
+          "label": "老大画像",
+          "x": 20,
+          "z": 26.4,
+          "feedback": "少量非致死异常，通常保持静止",
+          "key": "E",
+          "persistentUntil": "checkpoint-reset"
+        }
+      ],
+      "props": [
+        {
+          "model": "milkyfrog-plaster",
+          "x": 41.8,
+          "z": 24.5,
+          "yaw": 0,
+          "radius": 0.736,
+          "footprint": {
+            "x": 41.064,
+            "z": 23.971,
+            "w": 1.472,
+            "d": 1.058
+          },
+          "offscreenOnly": true,
+          "blocksEscape": false
+        }
+      ],
+      "event": "同一个人物不再同时留在画框和房间里。",
+      "walkableRects": [
+        {
+          "x": 2,
+          "z": 2,
+          "w": 44,
+          "d": 9
+        },
+        {
+          "x": 2,
+          "z": 21,
+          "w": 44,
+          "d": 9
+        },
+        {
+          "x": 37,
+          "z": 11,
+          "w": 9,
+          "d": 10
+        },
+        {
+          "x": 2,
+          "z": 11,
+          "w": 9,
+          "d": 2
+        },
+        {
+          "x": 2,
+          "z": 19,
+          "w": 9,
+          "d": 2
+        }
+      ],
+      "walls": [
+        {
+          "x": 8.1,
+          "z": 2,
+          "w": 0.25,
+          "d": 4.8
+        },
+        {
+          "x": 8.1,
+          "z": 9.2,
+          "w": 0.25,
+          "d": 1.8
+        },
+        {
+          "x": 8.1,
+          "z": 21,
+          "w": 0.25,
+          "d": 1.8
+        },
+        {
+          "x": 8.1,
+          "z": 25.2,
+          "w": 0.25,
+          "d": 4.8
+        },
+        {
+          "x": 10,
+          "z": 5,
+          "w": 0.2,
+          "d": 8,
+          "material": "plaster"
+        },
+        {
+          "x": 10,
+          "z": 19,
+          "w": 0.2,
+          "d": 8,
+          "material": "plaster"
+        },
+        {
+          "x": 22,
+          "z": 2,
+          "w": 0.2,
+          "d": 0.8
+        },
+        {
+          "x": 22,
+          "z": 5.2,
+          "w": 0.2,
+          "d": 2.8
+        },
+        {
+          "x": 22,
+          "z": 10,
+          "w": 0.2,
+          "d": 1
+        },
+        {
+          "x": 41,
+          "z": 11,
+          "w": 0.2,
+          "d": 2
+        },
+        {
+          "x": 41,
+          "z": 17,
+          "w": 0.2,
+          "d": 4
+        },
+        {
+          "x": 23,
+          "z": 21,
+          "w": 0.2,
+          "d": 1.5
+        },
+        {
+          "x": 23,
+          "z": 25,
+          "w": 0.2,
+          "d": 1.8
+        },
+        {
+          "x": 23,
+          "z": 29.2,
+          "w": 0.2,
+          "d": 0.8
+        },
+        {
+          "x": 33,
+          "z": 6.7,
+          "w": 0.2,
+          "d": 2.9,
+          "material": "plaster"
+        },
+        {
+          "x": 32,
+          "z": 22.3,
+          "w": 0.2,
+          "d": 3.2,
+          "material": "plaster"
+        },
+        {
+          "x": 30,
+          "z": 2,
+          "w": 0.24,
+          "d": 1.2,
+          "material": "plaster"
+        },
+        {
+          "x": 36,
+          "z": 3.7,
+          "w": 0.24,
+          "d": 1.3,
+          "material": "plaster"
+        },
+        {
+          "x": 31,
+          "z": 27,
+          "w": 0.24,
+          "d": 1.2,
+          "material": "plaster"
+        },
+        {
+          "x": 37,
+          "z": 28.8,
+          "w": 0.24,
+          "d": 1.2,
+          "material": "plaster"
+        },
+        {
+          "x": 10,
+          "z": 27,
+          "w": 28,
+          "d": 0.2,
+          "material": "plaster"
+        },
+        {
+          "x": 40,
+          "z": 27,
+          "w": 3.200000000000003,
+          "d": 0.2,
+          "material": "plaster"
+        },
+        {
+          "x": 10,
+          "z": 5,
+          "w": 14.5,
+          "d": 0.2,
+          "material": "plaster"
+        },
+        {
+          "x": 26.5,
+          "z": 5,
+          "w": 16.700000000000003,
+          "d": 0.2,
+          "material": "plaster"
+        },
+        {
+          "x": 28,
+          "z": 5.2,
+          "w": 0.2,
+          "d": 5.8,
+          "material": "plaster"
+        }
+      ],
+      "furniture": [
+        {
+          "name": "阅览桌",
+          "x": 12,
+          "z": 6.5,
+          "w": 4,
+          "d": 1.1
+        },
+        {
+          "name": "书架",
+          "x": 19.7,
+          "z": 6,
+          "w": 1,
+          "d": 3
+        },
+        {
+          "name": "折叠桌",
+          "x": 24.5,
+          "z": 6.5,
+          "w": 3,
+          "d": 1.2
+        },
+        {
+          "name": "画框底座",
+          "x": 41.7,
+          "z": 14,
+          "w": 1,
+          "d": 2
+        },
+        {
+          "name": "资料柜",
+          "x": 12,
+          "z": 23,
+          "w": 5,
+          "d": 1
+        },
+        {
+          "name": "档案桌",
+          "x": 37,
+          "z": 22,
+          "w": 2.4,
+          "d": 1.3
+        },
+        {
+          "name": "资料柜",
+          "x": 29,
+          "z": 6.3,
+          "w": 3.2,
+          "d": 1.05
+        },
+        {
+          "name": "书架",
+          "x": 29.3,
+          "z": 23.2,
+          "w": 1,
+          "d": 2.8
+        },
+        {
+          "name": "资料柜",
+          "x": 35,
+          "z": 6.3,
+          "w": 3.2,
+          "d": 1.05
+        },
+        {
+          "name": "书架",
+          "x": 35.3,
+          "z": 23.2,
+          "w": 1,
+          "d": 2.8
+        },
+        {
+          "name": "档案推车",
+          "x": 41.2,
+          "z": 25.8,
+          "w": 1.3,
+          "d": 0.9
+        }
+      ],
+      "mainRoute": [
+        [
+          8.6,
+          8
+        ],
+        [
+          9,
+          8
+        ],
+        [
+          9,
+          4
+        ],
+        [
+          44,
+          4
+        ],
+        [
+          44,
+          24.5
+        ],
+        [
+          39,
+          24.5
+        ],
+        [
+          39,
+          28
+        ],
+        [
+          9,
+          28
+        ],
+        [
+          9,
+          24
+        ],
+        [
+          8.6,
+          24
+        ]
+      ],
+      "alternateRoute": [
+        [
+          32,
+          9
+        ],
+        [
+          27,
+          9
+        ],
+        [
+          27,
+          23
+        ],
+        [
+          32,
+          23
+        ]
+      ],
+      "branch": [
+        [
+          32,
+          9.6
+        ],
+        [
+          24,
+          9.6
+        ],
+        [
+          24,
+          8.5
+        ]
+      ],
+      "lights": [
+        {
+          "id": "f3-l1",
+          "x": 10,
+          "z": 3,
+          "faulty": false,
+          "realtimePriority": 0
+        },
+        {
+          "id": "f3-l2",
+          "x": 13,
+          "z": 3,
+          "faulty": false,
+          "realtimePriority": 1
+        },
+        {
+          "id": "f3-l3",
+          "x": 16,
+          "z": 3,
+          "faulty": false,
+          "realtimePriority": 2
+        },
+        {
+          "id": "f3-l4",
+          "x": 19,
+          "z": 3,
+          "faulty": true,
+          "realtimePriority": 3
+        },
+        {
+          "id": "f3-l5",
+          "x": 22,
+          "z": 3,
+          "faulty": false,
+          "realtimePriority": 0
+        },
+        {
+          "id": "f3-l6",
+          "x": 25,
+          "z": 3,
+          "faulty": false,
+          "realtimePriority": 1
+        },
+        {
+          "id": "f3-l7",
+          "x": 28,
+          "z": 3,
+          "faulty": false,
+          "realtimePriority": 2
+        },
+        {
+          "id": "f3-l8",
+          "x": 31,
+          "z": 3,
+          "faulty": false,
+          "realtimePriority": 3
+        },
+        {
+          "id": "f3-l9",
+          "x": 32,
+          "z": 6,
+          "faulty": false,
+          "realtimePriority": 0
+        },
+        {
+          "id": "f3-l10",
+          "x": 32,
+          "z": 9,
+          "faulty": false,
+          "realtimePriority": 1
+        },
+        {
+          "id": "f3-l11",
+          "x": 32,
+          "z": 12,
+          "faulty": false,
+          "realtimePriority": 2
+        },
+        {
+          "id": "f3-l12",
+          "x": 32,
+          "z": 15,
+          "faulty": false,
+          "realtimePriority": 3
+        },
+        {
+          "id": "f3-l13",
+          "x": 32,
+          "z": 18,
+          "faulty": true,
+          "realtimePriority": 0
+        },
+        {
+          "id": "f3-l14",
+          "x": 32,
+          "z": 21,
+          "faulty": false,
+          "realtimePriority": 1
+        },
+        {
+          "id": "f3-l15",
+          "x": 32,
+          "z": 24,
+          "faulty": false,
+          "realtimePriority": 2
+        },
+        {
+          "id": "f3-l16",
+          "x": 32,
+          "z": 27,
+          "faulty": false,
+          "realtimePriority": 3
+        },
+        {
+          "id": "f3-l17",
+          "x": 10,
+          "z": 29,
+          "faulty": false,
+          "realtimePriority": 0
+        },
+        {
+          "id": "f3-l18",
+          "x": 13,
+          "z": 29,
+          "faulty": false,
+          "realtimePriority": 1
+        },
+        {
+          "id": "f3-l19",
+          "x": 16,
+          "z": 29,
+          "faulty": false,
+          "realtimePriority": 2
+        },
+        {
+          "id": "f3-l20",
+          "x": 19,
+          "z": 29,
+          "faulty": false,
+          "realtimePriority": 3
+        },
+        {
+          "id": "f3-l21",
+          "x": 22,
+          "z": 29,
+          "faulty": true,
+          "realtimePriority": 0
+        },
+        {
+          "id": "f3-l22",
+          "x": 25,
+          "z": 29,
+          "faulty": false,
+          "realtimePriority": 1
+        },
+        {
+          "id": "f3-l23",
+          "x": 28,
+          "z": 29,
+          "faulty": false,
+          "realtimePriority": 2
+        },
+        {
+          "id": "f3-l24",
+          "x": 31,
+          "z": 29,
+          "faulty": false,
+          "realtimePriority": 3
+        }
+      ],
+      "doors": [
+        {
+          "id": "A",
+          "x": 8.2,
+          "z": 8,
+          "width": 2.4,
+          "kind": "fire",
+          "swing": "into-stair"
+        },
+        {
+          "id": "B",
+          "x": 8.2,
+          "z": 24,
+          "width": 2.4,
+          "kind": "fire",
+          "swing": "into-stair"
+        },
+        {
+          "id": "north-room",
+          "x": 22.1,
+          "z": 4,
+          "width": 2.4,
+          "kind": "wood",
+          "secondExit": [
+            22.1,
+            9
+          ]
+        },
+        {
+          "id": "east-partition",
+          "x": 29.1,
+          "z": 15,
+          "width": 4,
+          "kind": "open"
+        }
+      ],
+      "metrics": {
+        "walkableArea": 658.19,
+        "mainRouteLength": 78.8,
+        "shortestRouteLength": 75.24,
+        "alternateRouteLength": 24,
+        "units": "meters",
+        "areaMethod": "0.25 m grid; floor/stair projection union minus partitions, fixed furniture, transformed GLB footprints; courtyard and closed western service strip excluded"
+      },
+      "validation": {
+        "mainPassable": true,
+        "alternatePassable": true,
+        "branchPassable": true,
+        "allInteractionsReachable": true,
+        "connectedWalkable": true,
+        "reachableRatio": 1,
+        "playerRadius": 0.3,
+        "gridResolution": 0.25
+      },
+      "windows": [],
+      "exteriorDoor": null,
+      "sightline": null,
+      "checkpoint": true,
+      "arrival": "A",
+      "departure": "B",
+      "eastExtension": 12,
+      "wingLights": [
+        [
+          30,
+          3.7
+        ],
+        [
+          30,
+          8.5
+        ],
+        [
+          30,
+          23
+        ],
+        [
+          30,
+          28.5
+        ],
+        [
+          36,
+          3.7
+        ],
+        [
+          36,
+          8.5
+        ],
+        [
+          36,
+          23
+        ],
+        [
+          36,
+          28.5
+        ],
+        [
+          25.5,
+          8.2
+        ]
+      ]
+    },
+    {
+      "id": 2,
+      "title": "过亮的活动大厅",
+      "tag": "用途错位",
+      "landmark": "全部朝向空墙的塑料椅",
+      "zones": [
+        {
+          "label": "主活动厅",
+          "x": 8.5,
+          "z": 2,
+          "w": 13.5,
+          "d": 9
+        },
+        {
+          "label": "关闭的儿童角",
+          "x": 22,
+          "z": 2,
+          "w": 12,
+          "d": 9
+        },
+        {
+          "label": "侧面服务通道",
+          "x": 25,
+          "z": 11,
+          "w": 9,
+          "d": 10
+        },
+        {
+          "label": "低顶集会区",
+          "x": 8.5,
+          "z": 21,
+          "w": 25.5,
+          "d": 9
+        }
+      ],
+      "color": "#a69a70",
+      "note": "这一层明显更亮。大面积空墙、低顶和过于整齐的椅子制造压迫；侧路始终为玩家留出撤离余地。",
+      "interactions": [
+        {
+          "id": "f2-e1",
+          "label": "北组照明",
+          "x": 11,
+          "z": 6,
+          "feedback": "一组灯管与照明同步变化",
+          "key": "E",
+          "persistentUntil": "checkpoint-reset"
+        },
+        {
+          "id": "f2-e2",
+          "label": "电视",
+          "x": 20,
+          "z": 9,
+          "feedback": "过亮画面中出现不动的模糊人形",
+          "key": "E",
+          "persistentUntil": "checkpoint-reset"
+        },
+        {
+          "id": "f2-e3",
+          "label": "儿童角卷帘",
+          "x": 27,
+          "z": 9,
+          "feedback": "只控制侧面内容，不封死主路线",
+          "key": "E",
+          "persistentUntil": "checkpoint-reset"
+        },
+        {
+          "id": "f2-e4",
+          "label": "服务照明",
+          "x": 27,
+          "z": 16,
+          "feedback": "异常时以沿路变暗给出方向",
+          "key": "E",
+          "persistentUntil": "checkpoint-reset"
+        },
+        {
+          "id": "f2-e5",
+          "label": "南组照明",
+          "x": 20,
+          "z": 26.4,
+          "feedback": "三组灯允许局部明暗变化",
+          "key": "E",
+          "persistentUntil": "checkpoint-reset"
+        }
+      ],
+      "props": [
+        {
+          "model": "milkyfrog-plaster",
+          "x": 20.5,
+          "z": 23.5,
+          "yaw": 1.5707963267948966,
+          "radius": 0.736,
+          "footprint": {
+            "x": 19.971,
+            "z": 22.764,
+            "w": 1.058,
+            "d": 1.472
+          },
+          "offscreenOnly": true,
+          "blocksEscape": false
+        },
+        {
+          "model": "suspender-mannequin",
+          "x": 26,
+          "z": 24.8,
+          "yaw": -1.5707963267948966,
+          "radius": 0.476,
+          "footprint": {
+            "x": 25.66,
+            "z": 24.324,
+            "w": 0.6800000000000002,
+            "d": 0.952
+          },
+          "offscreenOnly": true,
+          "blocksEscape": false
+        }
+      ],
+      "event": "明明所有椅子都朝向空墙，模特却朝向唯一的空座。",
+      "walkableRects": [
+        {
+          "x": 2,
+          "z": 2,
+          "w": 32,
+          "d": 9
+        },
+        {
+          "x": 2,
+          "z": 21,
+          "w": 32,
+          "d": 9
+        },
+        {
+          "x": 25,
+          "z": 11,
+          "w": 9,
+          "d": 10
+        },
+        {
+          "x": 2,
+          "z": 11,
+          "w": 9,
+          "d": 2
+        },
+        {
+          "x": 2,
+          "z": 19,
+          "w": 9,
+          "d": 2
+        }
+      ],
+      "walls": [
+        {
+          "x": 8.1,
+          "z": 2,
+          "w": 0.25,
+          "d": 4.8
+        },
+        {
+          "x": 8.1,
+          "z": 9.2,
+          "w": 0.25,
+          "d": 1.8
+        },
+        {
+          "x": 8.1,
+          "z": 21,
+          "w": 0.25,
+          "d": 1.8
+        },
+        {
+          "x": 8.1,
+          "z": 25.2,
+          "w": 0.25,
+          "d": 4.8
+        },
+        {
+          "x": 10,
+          "z": 5,
+          "w": 21.2,
+          "d": 0.2,
+          "material": "plaster"
+        },
+        {
+          "x": 10,
+          "z": 5,
+          "w": 0.2,
+          "d": 8,
+          "material": "plaster"
+        },
+        {
+          "x": 10,
+          "z": 27,
+          "w": 21.2,
+          "d": 0.2,
+          "material": "plaster"
+        },
+        {
+          "x": 10,
+          "z": 19,
+          "w": 0.2,
+          "d": 8,
+          "material": "plaster"
+        },
+        {
+          "x": 22,
+          "z": 2,
+          "w": 0.2,
+          "d": 0.8
+        },
+        {
+          "x": 22,
+          "z": 5.2,
+          "w": 0.2,
+          "d": 2.8
+        },
+        {
+          "x": 22,
+          "z": 10,
+          "w": 0.2,
+          "d": 1
+        }
+      ],
+      "furniture": [
+        {
+          "name": "椅列",
+          "x": 12,
+          "z": 6,
+          "w": 7,
+          "d": 1
+        },
+        {
+          "name": "椅列",
+          "x": 12,
+          "z": 7.8,
+          "w": 7,
+          "d": 0.7
+        },
+        {
+          "name": "儿童护栏",
+          "x": 24.5,
+          "z": 6.5,
+          "w": 3.5,
+          "d": 1
+        },
+        {
+          "name": "设备柜",
+          "x": 29.8,
+          "z": 14.2,
+          "w": 1,
+          "d": 2.5
+        },
+        {
+          "name": "椅列",
+          "x": 12,
+          "z": 23,
+          "w": 7,
+          "d": 1
+        },
+        {
+          "name": "椅列",
+          "x": 12,
+          "z": 25,
+          "w": 7,
+          "d": 1
+        }
+      ],
+      "mainRoute": [
+        [
+          8.6,
+          24
+        ],
+        [
+          9,
+          24
+        ],
+        [
+          9,
+          28
+        ],
+        [
+          32,
+          28
+        ],
+        [
+          32,
+          4
+        ],
+        [
+          9,
+          4
+        ],
+        [
+          9,
+          8
+        ],
+        [
+          8.6,
+          8
+        ]
+      ],
+      "alternateRoute": [
+        [
+          32,
+          9
+        ],
+        [
+          27,
+          9
+        ],
+        [
+          27,
+          23
+        ],
+        [
+          32,
+          23
+        ]
+      ],
+      "branch": [
+        [
+          32,
+          9.6
+        ],
+        [
+          24,
+          9.6
+        ],
+        [
+          24,
+          8.5
+        ]
+      ],
+      "lights": [
+        {
+          "id": "f2-l1",
+          "x": 10,
+          "z": 3,
+          "faulty": false,
+          "realtimePriority": 0
+        },
+        {
+          "id": "f2-l2",
+          "x": 13,
+          "z": 3,
+          "faulty": false,
+          "realtimePriority": 1
+        },
+        {
+          "id": "f2-l3",
+          "x": 16,
+          "z": 3,
+          "faulty": false,
+          "realtimePriority": 2
+        },
+        {
+          "id": "f2-l4",
+          "x": 19,
+          "z": 3,
+          "faulty": true,
+          "realtimePriority": 3
+        },
+        {
+          "id": "f2-l5",
+          "x": 22,
+          "z": 3,
+          "faulty": false,
+          "realtimePriority": 0
+        },
+        {
+          "id": "f2-l6",
+          "x": 25,
+          "z": 3,
+          "faulty": false,
+          "realtimePriority": 1
+        },
+        {
+          "id": "f2-l7",
+          "x": 28,
+          "z": 3,
+          "faulty": false,
+          "realtimePriority": 2
+        },
+        {
+          "id": "f2-l8",
+          "x": 31,
+          "z": 3,
+          "faulty": false,
+          "realtimePriority": 3
+        },
+        {
+          "id": "f2-l9",
+          "x": 32,
+          "z": 6,
+          "faulty": false,
+          "realtimePriority": 0
+        },
+        {
+          "id": "f2-l10",
+          "x": 32,
+          "z": 9,
+          "faulty": false,
+          "realtimePriority": 1
+        },
+        {
+          "id": "f2-l11",
+          "x": 32,
+          "z": 12,
+          "faulty": false,
+          "realtimePriority": 2
+        },
+        {
+          "id": "f2-l12",
+          "x": 32,
+          "z": 15,
+          "faulty": false,
+          "realtimePriority": 3
+        },
+        {
+          "id": "f2-l13",
+          "x": 32,
+          "z": 18,
+          "faulty": true,
+          "realtimePriority": 0
+        },
+        {
+          "id": "f2-l14",
+          "x": 32,
+          "z": 21,
+          "faulty": false,
+          "realtimePriority": 1
+        },
+        {
+          "id": "f2-l15",
+          "x": 32,
+          "z": 24,
+          "faulty": false,
+          "realtimePriority": 2
+        },
+        {
+          "id": "f2-l16",
+          "x": 32,
+          "z": 27,
+          "faulty": false,
+          "realtimePriority": 3
+        },
+        {
+          "id": "f2-l17",
+          "x": 10,
+          "z": 29,
+          "faulty": false,
+          "realtimePriority": 0
+        },
+        {
+          "id": "f2-l18",
+          "x": 13,
+          "z": 29,
+          "faulty": false,
+          "realtimePriority": 1
+        },
+        {
+          "id": "f2-l19",
+          "x": 16,
+          "z": 29,
+          "faulty": false,
+          "realtimePriority": 2
+        },
+        {
+          "id": "f2-l20",
+          "x": 19,
+          "z": 29,
+          "faulty": false,
+          "realtimePriority": 3
+        },
+        {
+          "id": "f2-l21",
+          "x": 22,
+          "z": 29,
+          "faulty": true,
+          "realtimePriority": 0
+        },
+        {
+          "id": "f2-l22",
+          "x": 25,
+          "z": 29,
+          "faulty": false,
+          "realtimePriority": 1
+        },
+        {
+          "id": "f2-l23",
+          "x": 28,
+          "z": 29,
+          "faulty": false,
+          "realtimePriority": 2
+        },
+        {
+          "id": "f2-l24",
+          "x": 31,
+          "z": 29,
+          "faulty": false,
+          "realtimePriority": 3
+        }
+      ],
+      "doors": [
+        {
+          "id": "A",
+          "x": 8.2,
+          "z": 8,
+          "width": 2.4,
+          "kind": "fire",
+          "swing": "into-stair"
+        },
+        {
+          "id": "B",
+          "x": 8.2,
+          "z": 24,
+          "width": 2.4,
+          "kind": "fire",
+          "swing": "into-stair"
+        },
+        {
+          "id": "north-room",
+          "x": 22.1,
+          "z": 4,
+          "width": 2.4,
+          "kind": "wood",
+          "secondExit": [
+            22.1,
+            9.4
+          ]
+        }
+      ],
+      "metrics": {
+        "walkableArea": 648.81,
+        "mainRouteLength": 78.8,
+        "shortestRouteLength": 75.24,
+        "alternateRouteLength": 24,
+        "units": "meters",
+        "areaMethod": "0.25 m grid; floor/stair projection union minus partitions, fixed furniture, transformed GLB footprints; courtyard and closed western service strip excluded"
+      },
+      "validation": {
+        "mainPassable": true,
+        "alternatePassable": true,
+        "branchPassable": true,
+        "allInteractionsReachable": true,
+        "connectedWalkable": true,
+        "reachableRatio": 1,
+        "playerRadius": 0.3,
+        "gridResolution": 0.25
+      },
+      "windows": [],
+      "exteriorDoor": null,
+      "sightline": null,
+      "checkpoint": false,
+      "arrival": "B",
+      "departure": "A"
+    },
+    {
+      "id": 1,
+      "title": "空旷门厅",
+      "tag": "出口可见",
+      "landmark": "隔着天井就能看到的外门",
+      "zones": [
+        {
+          "label": "信箱与门卫",
+          "x": 8.5,
+          "z": 2,
+          "w": 13.5,
+          "d": 9
+        },
+        {
+          "label": "接待值班区",
+          "x": 22,
+          "z": 2,
+          "w": 12,
+          "d": 9
+        },
+        {
+          "label": "门厅东侧",
+          "x": 25,
+          "z": 11,
+          "w": 9,
+          "d": 10
+        },
+        {
+          "label": "出口前厅",
+          "x": 8.5,
+          "z": 21,
+          "w": 25.5,
+          "d": 9
+        }
+      ],
+      "color": "#788a7b",
+      "note": "入口即可从玻璃天井望见外门。到达前厅后降低环境异动密度，让开阔和缺少遮挡本身制造紧张。",
+      "interactions": [
+        {
+          "id": "f1-e1",
+          "label": "门卫观察窗",
+          "x": 18,
+          "z": 9,
+          "feedback": "可见来路和楼梯口",
+          "key": "E",
+          "persistentUntil": "checkpoint-reset"
+        },
+        {
+          "id": "f1-e2",
+          "label": "信箱",
+          "x": 13,
+          "z": 8,
+          "feedback": "柜门保持状态；普通旧信件也会出现",
+          "key": "E",
+          "persistentUntil": "checkpoint-reset"
+        },
+        {
+          "id": "f1-e3",
+          "label": "防火门",
+          "x": 9,
+          "z": 24,
+          "feedback": "具有明确关闭位置与锁舌反馈",
+          "key": "E",
+          "persistentUntil": "checkpoint-reset"
+        },
+        {
+          "id": "f1-e4",
+          "label": "接待电视",
+          "x": 27,
+          "z": 8.5,
+          "feedback": "默认无声静帧，电源指示可见",
+          "key": "E",
+          "persistentUntil": "checkpoint-reset"
+        },
+        {
+          "id": "f1-e5",
+          "label": "外门",
+          "x": 6.5,
+          "z": 29.3,
+          "feedback": "唯一最终目标，危险未解除时不激活新检查点",
+          "key": "E",
+          "persistentUntil": "checkpoint-reset"
+        }
+      ],
+      "props": [
+        {
+          "model": "suspender-mannequin",
+          "x": 29.5,
+          "z": 24,
+          "yaw": 3.141592653589793,
+          "radius": 0.47600000000000003,
+          "footprint": {
+            "x": 29.024,
+            "z": 23.66,
+            "w": 0.9520000000000001,
+            "d": 0.6800000000000002
+          },
+          "offscreenOnly": true,
+          "blocksEscape": false
+        }
+      ],
+      "event": "先前动静忽然消失，柜台后留下比人影更清楚的空白。",
+      "walkableRects": [
+        {
+          "x": 2,
+          "z": 2,
+          "w": 32,
+          "d": 9
+        },
+        {
+          "x": 2,
+          "z": 21,
+          "w": 32,
+          "d": 9
+        },
+        {
+          "x": 25,
+          "z": 11,
+          "w": 9,
+          "d": 10
+        },
+        {
+          "x": 2,
+          "z": 11,
+          "w": 9,
+          "d": 2
+        },
+        {
+          "x": 2,
+          "z": 19,
+          "w": 9,
+          "d": 2
+        }
+      ],
+      "walls": [
+        {
+          "x": 8.1,
+          "z": 2,
+          "w": 0.25,
+          "d": 4.8
+        },
+        {
+          "x": 8.1,
+          "z": 9.2,
+          "w": 0.25,
+          "d": 1.8
+        },
+        {
+          "x": 8.1,
+          "z": 21,
+          "w": 0.25,
+          "d": 1.8
+        },
+        {
+          "x": 8.1,
+          "z": 25.2,
+          "w": 0.25,
+          "d": 4.8
+        },
+        {
+          "x": 10,
+          "z": 5,
+          "w": 21.2,
+          "d": 0.2,
+          "material": "fixed-glass"
+        },
+        {
+          "x": 10,
+          "z": 5,
+          "w": 0.2,
+          "d": 8,
+          "material": "fixed-glass"
+        },
+        {
+          "x": 10,
+          "z": 27,
+          "w": 21.2,
+          "d": 0.2,
+          "material": "fixed-glass"
+        },
+        {
+          "x": 10,
+          "z": 19,
+          "w": 0.2,
+          "d": 8,
+          "material": "fixed-glass"
+        }
+      ],
+      "furniture": [
+        {
+          "name": "信箱",
+          "x": 12,
+          "z": 6.3,
+          "w": 4,
+          "d": 0.8
+        },
+        {
+          "name": "门卫桌",
+          "x": 18.7,
+          "z": 6.5,
+          "w": 2,
+          "d": 1.2
+        },
+        {
+          "name": "接待台",
+          "x": 25,
+          "z": 6,
+          "w": 4,
+          "d": 1.3
+        },
+        {
+          "name": "长椅",
+          "x": 29.7,
+          "z": 14,
+          "w": 1,
+          "d": 3
+        },
+        {
+          "name": "前台",
+          "x": 16,
+          "z": 22.8,
+          "w": 4,
+          "d": 1.3
+        },
+        {
+          "name": "公告柜",
+          "x": 26,
+          "z": 24.8,
+          "w": 2,
+          "d": 1.1
+        }
+      ],
+      "mainRoute": [
+        [
+          8.6,
+          8
+        ],
+        [
+          9,
+          8
+        ],
+        [
+          9,
+          4
+        ],
+        [
+          32,
+          4
+        ],
+        [
+          32,
+          28
+        ],
+        [
+          9,
+          28
+        ],
+        [
+          9,
+          24
+        ],
+        [
+          6.5,
+          24
+        ],
+        [
+          6.5,
+          29.6
+        ]
+      ],
+      "alternateRoute": [
+        [
+          32,
+          9
+        ],
+        [
+          27,
+          9
+        ],
+        [
+          27,
+          23
+        ],
+        [
+          32,
+          23
+        ]
+      ],
+      "branch": [
+        [
+          32,
+          9.6
+        ],
+        [
+          24,
+          9.6
+        ],
+        [
+          24,
+          8.5
+        ]
+      ],
+      "lights": [
+        {
+          "id": "f1-l1",
+          "x": 10,
+          "z": 3,
+          "faulty": false,
+          "realtimePriority": 0
+        },
+        {
+          "id": "f1-l2",
+          "x": 13,
+          "z": 3,
+          "faulty": false,
+          "realtimePriority": 1
+        },
+        {
+          "id": "f1-l3",
+          "x": 16,
+          "z": 3,
+          "faulty": false,
+          "realtimePriority": 2
+        },
+        {
+          "id": "f1-l4",
+          "x": 19,
+          "z": 3,
+          "faulty": true,
+          "realtimePriority": 3
+        },
+        {
+          "id": "f1-l5",
+          "x": 22,
+          "z": 3,
+          "faulty": false,
+          "realtimePriority": 0
+        },
+        {
+          "id": "f1-l6",
+          "x": 25,
+          "z": 3,
+          "faulty": false,
+          "realtimePriority": 1
+        },
+        {
+          "id": "f1-l7",
+          "x": 28,
+          "z": 3,
+          "faulty": false,
+          "realtimePriority": 2
+        },
+        {
+          "id": "f1-l8",
+          "x": 31,
+          "z": 3,
+          "faulty": false,
+          "realtimePriority": 3
+        },
+        {
+          "id": "f1-l9",
+          "x": 32,
+          "z": 6,
+          "faulty": false,
+          "realtimePriority": 0
+        },
+        {
+          "id": "f1-l10",
+          "x": 32,
+          "z": 9,
+          "faulty": false,
+          "realtimePriority": 1
+        },
+        {
+          "id": "f1-l11",
+          "x": 32,
+          "z": 12,
+          "faulty": false,
+          "realtimePriority": 2
+        },
+        {
+          "id": "f1-l12",
+          "x": 32,
+          "z": 15,
+          "faulty": false,
+          "realtimePriority": 3
+        },
+        {
+          "id": "f1-l13",
+          "x": 32,
+          "z": 18,
+          "faulty": true,
+          "realtimePriority": 0
+        },
+        {
+          "id": "f1-l14",
+          "x": 32,
+          "z": 21,
+          "faulty": false,
+          "realtimePriority": 1
+        },
+        {
+          "id": "f1-l15",
+          "x": 32,
+          "z": 24,
+          "faulty": false,
+          "realtimePriority": 2
+        },
+        {
+          "id": "f1-l16",
+          "x": 32,
+          "z": 27,
+          "faulty": false,
+          "realtimePriority": 3
+        },
+        {
+          "id": "f1-l17",
+          "x": 10,
+          "z": 29,
+          "faulty": false,
+          "realtimePriority": 0
+        },
+        {
+          "id": "f1-l18",
+          "x": 13,
+          "z": 29,
+          "faulty": false,
+          "realtimePriority": 1
+        },
+        {
+          "id": "f1-l19",
+          "x": 16,
+          "z": 29,
+          "faulty": false,
+          "realtimePriority": 2
+        },
+        {
+          "id": "f1-l20",
+          "x": 19,
+          "z": 29,
+          "faulty": false,
+          "realtimePriority": 3
+        },
+        {
+          "id": "f1-l21",
+          "x": 22,
+          "z": 29,
+          "faulty": true,
+          "realtimePriority": 0
+        },
+        {
+          "id": "f1-l22",
+          "x": 25,
+          "z": 29,
+          "faulty": false,
+          "realtimePriority": 1
+        },
+        {
+          "id": "f1-l23",
+          "x": 28,
+          "z": 29,
+          "faulty": false,
+          "realtimePriority": 2
+        },
+        {
+          "id": "f1-l24",
+          "x": 31,
+          "z": 29,
+          "faulty": false,
+          "realtimePriority": 3
+        }
+      ],
+      "doors": [
+        {
+          "id": "A",
+          "x": 8.2,
+          "z": 8,
+          "width": 2.4,
+          "kind": "fire",
+          "swing": "into-stair"
+        },
+        {
+          "id": "B",
+          "x": 8.2,
+          "z": 24,
+          "width": 2.4,
+          "kind": "fire",
+          "swing": "into-stair"
+        }
+      ],
+      "metrics": {
+        "walkableArea": 662.69,
+        "mainRouteLength": 86.5,
+        "shortestRouteLength": 80.36,
+        "alternateRouteLength": 24,
+        "units": "meters",
+        "areaMethod": "0.25 m grid; floor/stair projection union minus partitions, fixed furniture, transformed GLB footprints; courtyard and closed western service strip excluded"
+      },
+      "validation": {
+        "mainPassable": true,
+        "alternatePassable": true,
+        "branchPassable": true,
+        "allInteractionsReachable": true,
+        "connectedWalkable": true,
+        "reachableRatio": 1,
+        "playerRadius": 0.3,
+        "gridResolution": 0.25
+      },
+      "windows": [
+        {
+          "id": "exit-preview-window",
+          "planeX": 8.225,
+          "zMin": 28,
+          "zMax": 29.4,
+          "yMin": 0.9,
+          "yMax": 2.3,
+          "material": "wired-glass",
+          "walkable": false
+        }
+      ],
+      "exteriorDoor": {
+        "x": 6.5,
+        "z": 30,
+        "width": 1.8,
+        "kind": "exterior",
+        "opens": "outward"
+      },
+      "sightline": [
+        [
+          32,
+          10
+        ],
+        [
+          6.5,
+          30
+        ]
+      ],
+      "checkpoint": true,
+      "arrival": "A",
+      "departure": "exit"
+    }
+  ]
+}

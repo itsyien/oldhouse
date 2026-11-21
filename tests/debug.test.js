@@ -1,0 +1,5 @@
+import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import{Game,RULES}from'../src/simulation.js';import{prepareBuilding}from'../src/building.js';
+const building=prepareBuilding(JSON.parse(fs.readFileSync(new URL('../public/assets/apartment/floors.json',import.meta.url))));
+test('safe debug intercepts every character catch while ordinary play still loses',()=>{const g=new Game(building,8);g.debugMode=true;for(const kind of Object.keys(RULES)){g.fail(kind);assert.equal(g.mode,'playing');assert.equal(g.debugLastCatch.kind,kind);assert.equal(g.failure,null);}g.debugMode=false;g.fail('yujie');assert.equal(g.mode,'lost');assert.equal(g.lastCatch,'yujie');});
+
+test('debug requests one real scare per encounter without killing or repeating every frame',()=>{const g=new Game(building,8);g.debugMode=true;g.beginEncounter('naiwa',{floor:5,x:15,z:4});g.fail('naiwa');assert.equal(g.debugPendingScare,true);assert.equal(g.mode,'playing');g.debugPendingScare=false;g.fail('naiwa');assert.equal(g.debugPendingScare,false);g.resolveThreat();g.beginEncounter('kun',{floor:5,x:15,z:4});g.fail('kun');assert.equal(g.debugPendingScare,true);});
