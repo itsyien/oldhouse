@@ -1,0 +1,182 @@
+[
+  {
+    "id": "room-tone",
+    "file": "room-tone.ogg",
+    "sourceFile": "01 - LEGIT Audio - TheShopCollection_convenience_store_drinks_fridge_drone.mp3",
+    "source": "https://opengameart.org/content/the-shop",
+    "author": "LEGIT Audio",
+    "license": "CC0-1.0",
+    "processing": "highpass=f=55,lowpass=f=1200,afade=t=in:d=0.08,afade=t=out:st=15.92:d=0.08",
+    "sha256": "de1e50a58ebc6328087e6bb06c511aae133dd8963ab1e71a924e2de8328a9446"
+  },
+  {
+    "id": "tv-static",
+    "file": "tv-static.ogg",
+    "sourceFile": "static-source.wav",
+    "source": "https://opengameart.org/content/frequency-static-sound-effects",
+    "author": "bretbernhoft",
+    "license": "CC0-1.0",
+    "processing": "highpass=f=300,lowpass=f=4500,afade=t=in:d=0.03,afade=t=out:st=5.97:d=0.03",
+    "sha256": "d118614acdb4937431ddbd3c24040508504ecdf78622d7e44e8130df1ad4dd53"
+  },
+  {
+    "id": "warning",
+    "file": "warning.ogg",
+    "sourceFile": "Bassy 4.wav",
+    "source": "https://opengameart.org/content/horror-hit-soundpack-1",
+    "author": "psychhead_",
+    "license": "CC0-1.0",
+    "processing": "lowpass=f=1600,afade=t=out:st=2:d=0.5",
+    "sha256": "6b079e7d87dfeab7d4617df6d217e9c85cdec20805a5222dceda67eb649bba90"
+  },
+  {
+    "id": "scare",
+    "file": "scare.ogg",
+    "sourceFile": "Bassy 1.wav",
+    "source": "https://opengameart.org/content/horror-hit-soundpack-1",
+    "author": "psychhead_",
+    "license": "CC0-1.0",
+    "processing": "lowpass=f=5500,afade=t=out:st=2.5:d=0.5",
+    "sha256": "17a14588adcd649e76f065e279fc24a9838da30759d9f10667c2aa15bab965ff"
+  },
+  {
+    "id": "power-off",
+    "file": "power-off.ogg",
+    "sourceFile": "Bassy 8.wav",
+    "source": "https://opengameart.org/content/horror-hit-soundpack-1",
+    "author": "psychhead_",
+    "license": "CC0-1.0",
+    "processing": "lowpass=f=900,afade=t=out:st=1:d=0.5",
+    "sha256": "075e86c676f7c0adc6b40d8d84120f9c3c43ab7bb35c57f3a3eff1672116257e"
+  },
+  {
+    "id": "click",
+    "file": "click.ogg",
+    "sourceFile": "click_003.ogg",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "author": "Kenney",
+    "license": "CC0-1.0",
+    "processing": "Unmodified",
+    "sha256": "2fa929138bc3a0f432696588f66eac94b8f6d463905ec8808c6461ce4b054292"
+  },
+  {
+    "id": "pickup",
+    "file": "pickup.ogg",
+    "sourceFile": "select_002.ogg",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "author": "Kenney",
+    "license": "CC0-1.0",
+    "processing": "Unmodified",
+    "sha256": "4cc6ac5341b9b2c86fef80c347de028e9ab9f2e037586ac7d9fa59a403a1c012"
+  },
+  {
+    "id": "switch",
+    "file": "switch.ogg",
+    "sourceFile": "switch_003.ogg",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "author": "Kenney",
+    "license": "CC0-1.0",
+    "processing": "Unmodified",
+    "sha256": "ca12dd32103f401481d5aff56d5e9831174e99bb577139c09b07d046eb8b837e"
+  },
+  {
+    "id": "sweep-lunge",
+    "file": "sweep-lunge.ogg",
+    "sourceFile": "monster.1.ogg, monster.14.ogg",
+    "source": "https://opengameart.org/content/16-monster-growls",
+    "author": "StarNinjas",
+    "license": "CC0-1.0",
+    "processing": "Trimmed and pitch-shifted vocal takes, filtered, layered over a short low-pass excerpt of power-off.ogg (psychhead_), 0.46 s mono, faded and peak-normalized",
+    "sha256": "cb81b7148c29eb50b46f372683f1761b0061004876a395c7fcc36ccb9c20d250"
+  },
+  {
+    "id": "background-music",
+    "file": "background-music.mp3",
+    "sourceFile": "BackgroundMusic.mp3",
+    "source": "User-provided SFX folder",
+    "author": null,
+    "license": null,
+    "processing": "Original",
+    "sha256": "4f4f53eab60748e2bc456b3d0849b75de0a119a7cba8534600273d688bb1a68c"
+  },
+  {
+    "id": "actor-scare",
+    "file": "actor-scare.mp3",
+    "sourceFile": "JumpScare-Naiwa,Gunmu,Sun,YuJie,LiangZi.mp3",
+    "source": "User-provided SFX folder",
+    "author": null,
+    "license": null,
+    "processing": "Original",
+    "sha256": "1f4da6b4c62078f2b27e67b38ff2619c0a088133a5857553cfe84f5f0868578b"
+  },
+  {
+    "id": "naiwa-spawn",
+    "file": "naiwa-spawn.mp3",
+    "sourceFile": "NaiWaSpawn.mp3",
+    "source": "User-provided SFX folder",
+    "author": null,
+    "license": null,
+    "processing": "Original",
+    "sha256": "e366ae54b9d4e02b701776f10a74f2d62c2e19277cc475c6a3b72570b56d0ab9"
+  },
+  {
+    "id": "sweep-pass",
+    "file": "sweep-pass.mp3",
+    "sourceFile": "RushReturner.mp3",
+    "source": "User-provided SFX folder",
+    "author": null,
+    "license": null,
+    "processing": "Original",
+    "sha256": "e59ae4dafafe26763518dbd1820c23dfb3389308c20aa2dfc46e814229c3f7c7"
+  },
+  {
+    "id": "sweep-warning",
+    "file": "sweep-warning.mp3",
+    "sourceFile": "RushReturnerWarning.mp3",
+    "source": "User-provided SFX folder",
+    "author": null,
+    "license": null,
+    "processing": "Original",
+    "sha256": "49bf8c05cbd57ae18f30986913e43123dff8413136ca7fd07627d44c30dfe3f5"
+  },
+  {
+    "id": "sweeper-scare",
+    "file": "sweeper-scare.mp3",
+    "sourceFile": "JumpScareWANGHIROHITO.mp3",
+    "source": "User-provided SFX folder",
+    "author": null,
+    "license": null,
+    "processing": "Original",
+    "sha256": "306208276f329c8800c6ea1c60f829e5f59137af0a8010938f7ad5386bc8cf00"
+  },
+  {
+    "id": "yujie-background",
+    "file": "yujie-background.mp3",
+    "sourceFile": "YuJieBackgroundSFX.mp3",
+    "source": "User-provided SFX folder",
+    "author": null,
+    "license": null,
+    "processing": "Original",
+    "sha256": "db29fc5567a98b8cc65875edb7d405dcbdbe0663dc857a8339495981129a86cc"
+  },
+  {
+    "id": "tenno-return",
+    "file": "tenno-return.mp3",
+    "sourceFile": "Hirohito2.mp3",
+    "source": "User-provided SFX folder",
+    "author": null,
+    "license": null,
+    "processing": "Original",
+    "sha256": "03b86fee52d92809c70b91269ec306e0dbb2a20cb8684c99b87f5466e4452987"
+  },
+  {
+    "id": "stone-speak",
+    "file": "stone-speak.mp3",
+    "sourceFile": "StoneSpeakAudio.mp3",
+    "source": "User-provided download",
+    "author": null,
+    "license": null,
+    "processing": "Original",
+    "sha256": "af563a8f1ea4ad268f031c259d37fdcd575a2e62b2d300ad2a9b21e2351e9392"
+  }
+]

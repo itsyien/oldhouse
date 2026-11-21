@@ -1,0 +1,53 @@
+{
+  "scene_policy": "自主搭建3D几何场景，程序材质；不直接使用网络场景照片、预渲染场景图或先前下载的环境贴图。",
+  "characters": [
+    {
+      "id": "naiwa",
+      "file": "naiwa.jpg",
+      "source_page": "https://milkyfrog.com/en/",
+      "image_url": "https://static.milkyfrog.com/assets/mf-poster-a73129b5.jpg",
+      "width": 720,
+      "height": 1122,
+      "bytes": 21081,
+      "sha256": "f4aa372f767e3e64f826989459196e14c38af09593e91b3bf89610657aff8ba7",
+      "note": "白底全身侧前方，尚未抠图；以原图作为人物轮廓 billboard 纹理",
+      "license": "未核实开放素材许可；保留原文件与来源记录"
+    },
+    {
+      "id": "sun",
+      "file": "sun.jpg",
+      "source_page": "https://yhxl.fandom.com/zh/wiki/%E5%AD%99%E7%AC%91%E5%B7%9D",
+      "image_url": "https://static.wikia.nocookie.net/yhxl/images/1/10/Img-1dd79fb9d5f040928fb5f5ccc8e9caea.jpg/revision/latest?cb=20181222031012&path-prefix=zh",
+      "width": 720,
+      "height": 960,
+      "bytes": 34384,
+      "sha256": "ef374e6dae95a535daea072b19c3bd3e181c5fb073ff859170fd03853374eacd",
+      "note": "西装交叉手臂半身，原图含来源水印；以原图作为人物轮廓 billboard 纹理",
+      "license": "未核实开放素材许可；保留原文件与来源记录"
+    },
+    {
+      "id": "kun",
+      "file": "kun.jpg",
+      "source_page": "https://zhuanlan.zhihu.com/p/618720415",
+      "image_url": "https://pica.zhimg.com/v2-ca608919c0a036ae2138d44308e3893b_1440w.jpg?source=172ae18b",
+      "width": 1080,
+      "height": 970,
+      "bytes": 43042,
+      "sha256": "848f95a49e60757e54fd9e2256f081d47e69109f2a259810de0fe7aa4a34a732",
+      "note": "背带裤篮球动作；有运动模糊，鞋底接近图片边缘；以原图作为人物轮廓 billboard 纹理",
+      "license": "未核实开放素材许可；保留原文件与来源记录"
+    },
+    {
+      "id": "liang-portrait",
+      "file": "liang.jpg",
+      "source_page": "https://m.bjnews.com.cn/detail/1756083753168194.html",
+      "image_url": "https://media.bjnews.com.cn/fz/html/AttachPubDev/2025/8/wangyu202582592312663373.jpg",
+      "width": 1179,
+      "height": 2168,
+      "bytes": 422510,
+      "sha256": "998625382931e4d55e19905b44afca2eec7bbe9555803c8ea6ad22204ec90f0a",
+      "note": "正面半身，闭眼，附原页面关闭图标；门后/肖像出场候选；以原图作为人物轮廓 billboard 纹理",
+      "license": "未核实开放素材许可；保留原文件与来源记录"
+    }
+  ]
+}
