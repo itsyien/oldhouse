@@ -35,7 +35,7 @@ const depotExitPace=3,depotAlarmMaskDistance=6;
 const listenerSprintHold=1;
 const playerSprintSpeed=5,kunChaseSpeed=playerSprintSpeed*.85,kunFastSpeed=kunChaseSpeed*3,kunDoorWait=1.45;
 const listenerPatrolPace=1.55,depotWalkRange=7,depotWalkCooldown=12;
-const gunmuGateHold=15.5,gunmuPursuitSpeed=4.55;
+const gunmuGateHold=15.5,gunmuLureSpeed=4,gunmuPursuitSpeed=4.55;
 export const CHASE_BOARD_DROP=.28,CHASE_BOARD_STUN=1.35;
 const kunResident=f=>({kind:'kun',floor:f.id,y:f.base,...f.chaseSpawn,heading:f.chaseSpawn.yaw,phase:'dormant',age:0,warning:.9});
 const partNames=['whole','front','back'];
@@ -1094,7 +1094,8 @@ export class CampaignGame extends Game{
    if(clearActorTravel(this.floor,t,step,blocks.filter(b=>b!==rack),.26,options)){t.x=step.x;t.z=step.z;}
    t.pathAge=1;return;
   }
-  if(kun&&(t.sightLocked||t.fastPursuit)&&target.floor===t.floor){
+  const directPursuit=kun?t.sightLocked||t.fastPursuit:agent==='doubao'&&target===this.player&&t.visible;
+  if(directPursuit&&target.floor===t.floor){
    // Follow a visible runner between navigation nodes. Keep the graph for doors, corners and vaults.
    const gap=distance(t,target),run=gap-.42;
    if(run>0){
@@ -1289,7 +1290,7 @@ export class CampaignGame extends Game{
   if(entrance){entrance.open=false;entrance.locked=true;}
   this.immunity=0;
   this.threat={kind:'doubao',floor:1,...position,y:0,age:0,warning:.9,phase:'pursuing',
-   path:[],pathAge:1,lastSeen:point(this.player)};
+   path:[],pathAge:1};
   if(this.state.gunmuStage==='lure')this.emit(RULES.doubao.action,5);
   return true;
  }
@@ -1389,8 +1390,7 @@ export class CampaignGame extends Game{
    if(caughtInGunmuShaft(t,p,f,s.gunmuPipeIndex,s,this.time))this.fail('doubao');
    return;
   }
-  if(this.line(t,p)||this.sprinting&&distance(t,p)<=13)t.lastSeen=point(p);
-  this.travelCampaignActor(t,dt,gunmuPursuitSpeed,t.lastSeen,'doubao');
+  this.travelCampaignActor(t,dt,s.gunmuStage==='lure'?gunmuLureSpeed:gunmuPursuitSpeed,p,'doubao');
   if(distance(p,t)<.72&&this.line(t,p))this.fail('doubao');
  }
  updateAuxiliary(dt,input){

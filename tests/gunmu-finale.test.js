@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {CampaignGame} from '../src/campaign.js';
 import {createCampaignBuilding} from '../src/campaign-layout.js';
+import {floorPassable} from '../src/building.js';
 import {blocked} from '../src/logic.js';
 import {caughtInGunmuShaft,crawlGunmu,gunmuCrawlSpeed,moveGunmuPlatforms} from '../src/gunmu-finale.js';
 import {listShaftPipes,shaftSlideOffset,shaftSlideProgress} from '../src/gunmu-shaft-geometry.js';
@@ -181,6 +182,52 @@ test('an early lever pull leaves the shutter open, with a chance to lure Gunmu a
  assert(!game.interact(lever.id));assert(door(finale.trap.gateId).open);assert.equal(game.state.gunmuStage,'lure');
  assert(door(finale.pipeGateId).locked);
  assert(game.messages.some(message=>message.text==='等她完全进维修间，再拉闸。'));
+});
+
+test('Gunmu catches a walking player who rounds the first boiler without stopping',()=>{
+ for(const fps of [30,60]){
+  const {game,dt,go}=run(fps);
+  go(16.4,24,{walking:true});
+  assert.equal(game.threat?.kind,'doubao');
+  for(const [x,z] of [[16.3,20.8],[21.1,20.9],[21.5,22.1],[29.55,22.1],[35,21.8]]){
+   const remaining=()=>Math.hypot(game.player.x-x,game.player.z-z);
+   for(let frame=0;frame<6*fps&&game.mode==='playing'&&remaining()>.11;frame++){
+    const before=remaining();
+    game.tick(dt,{forward:1,yaw:Math.atan2(game.player.x-x,game.player.z-z)});
+    if(game.mode==='lost')assert(remaining()<before,'the player was still moving when caught');
+   }
+   if(game.mode==='lost')break;
+   assert(remaining()<=.11,`walking route should reach ${x}, ${z}`);
+  }
+  assert.equal(game.mode,'lost',`the walking player escaped Gunmu at ${fps} Hz`);
+  assert.equal(game.lastCatch,'doubao');
+ }
+});
+
+test('Gunmu can round the stack and reach a player in either narrow gap',()=>{
+ for(const route of [[[37.6,29.655]],[[37.7,29.655],[37.7,28]]]){
+  const {game,dt,go}=run(60);
+  Object.assign(game.player,{x:36.2,z:29.655});
+  assert(game.beginGunmu({x:35.5,z:28.3}));
+  for(const [x,z] of route)go(x,z,{walking:true});
+  assert(!game.line(game.threat,game.player),'the storage stack separates the player and Gunmu');
+  for(let frame=0;frame<240&&game.mode==='playing';frame++){
+   game.tick(dt);
+   assert(floorPassable(game.floor,game.threat,.26,game.floorBlocks()),'Gunmu stays clear of the stack and walls');
+  }
+  assert.equal(game.mode,'lost',`Gunmu should reach the player at ${route.at(-1)}`);
+  assert.equal(game.lastCatch,'doubao');
+ }
+});
+
+test('Gunmu reaches a player tucked beside the entry alcove wardrobe',()=>{
+ const {game,wait}=run(60);
+ Object.assign(game.player,{x:12.6875,z:28.45});
+ assert(floorPassable(game.floor,game.player));
+ assert(game.beginGunmu());
+ wait(8,()=>game.mode==='lost');
+ assert.equal(game.mode,'lost');
+ assert.equal(game.lastCatch,'doubao');
 });
 
 test('bypassing the repair bay leaves the pipe-room door locked with Gunmu still hunting',()=>{

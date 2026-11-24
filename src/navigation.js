@@ -21,16 +21,23 @@ class Heap{
 export class Navigator{
  constructor(building){
   this.building=building;this.nodes=[];this.byFloor={};this.cells=new Map();this.cache=new Map();
-  for(const f of building.floors){this.byFloor[f.id]=[];for(let z=f.bounds.minZ+.5;z<f.bounds.maxZ;z+=.5)for(let x=f.bounds.minX+.5;x<f.bounds.maxX;x+=.5)if(floorPassable(f,{x,z},.27)){
-   const n={x,z,floor:f.id,id:this.nodes.length,edges:[]};
-   if(f.listenerDepot)n.listenerTight=blocked(x,z,f.obstacles,.64);
-   this.nodes.push(n);this.byFloor[f.id].push(n);this.cells.set(`${f.id},${x},${z}`,n);
-  }}
-  for(const n of this.nodes)for(const [dx,dz]of[[.5,0],[-.5,0],[0,.5],[0,-.5],[.5,.5],[.5,-.5],[-.5,.5],[-.5,-.5]]){
-   const f=building.byId[n.floor],b=this.cells.get(`${n.floor},${n.x+dx},${n.z+dz}`);if(!b)continue;
-   // A diagonal across two joined corridors can clip the inside corner between grid samples.
-   if((f.scenes||f.mode==='chase'||f.gunmuFinale)&&dx&&dz&&(!this.cells.has(`${n.floor},${n.x+dx},${n.z}`)||!this.cells.has(`${n.floor},${n.x},${n.z+dz}`)))continue;
-   if(floorPassable(f,{x:n.x+dx/2,z:n.z+dz/2},.27))n.edges.push({to:b.id,cost:Math.hypot(dx,dz)});
+  for(const f of building.floors){
+   // The finer grid and offset put nodes in both narrow gaps beside the repair bay stack.
+   const step=f.gunmuFinale ? .25 : .5,offset=f.gunmuFinale ? .1875 : step;
+   const radius=f.gunmuFinale ? .26 : .27;
+   const nodes=this.byFloor[f.id]=[];
+   for(let z=f.bounds.minZ+offset;z<f.bounds.maxZ;z+=step)for(let x=f.bounds.minX+offset;x<f.bounds.maxX;x+=step)if(floorPassable(f,{x,z},radius)){
+    const n={x,z,floor:f.id,id:this.nodes.length,edges:[]};
+    if(f.listenerDepot)n.listenerTight=blocked(x,z,f.obstacles,.64);
+    this.nodes.push(n);nodes.push(n);this.cells.set(`${f.id},${x},${z}`,n);
+   }
+   const offsets=[[step,0],[-step,0],[0,step],[0,-step],[step,step],[step,-step],[-step,step],[-step,-step]];
+   for(const n of nodes)for(const [dx,dz] of offsets){
+    const b=this.cells.get(`${n.floor},${n.x+dx},${n.z+dz}`);if(!b)continue;
+    // A diagonal across two joined corridors can clip the inside corner between grid samples.
+    if((f.scenes||f.mode==='chase'||f.gunmuFinale)&&dx&&dz&&(!this.cells.has(`${n.floor},${n.x+dx},${n.z}`)||!this.cells.has(`${n.floor},${n.x},${n.z+dz}`)))continue;
+    if(floorPassable(f,{x:n.x+dx/2,z:n.z+dz/2},radius))n.edges.push({to:b.id,cost:Math.hypot(dx,dz)});
+   }
   }
   for(const link of building.links){const core=link.from[1],z=core==='A'?8:24,a=this.closest({floor:link.from[0],x:8.8,z}),b=this.closest({floor:link.to[0],x:8.8,z});
    a.edges.push({to:b.id,cost:13,core});b.edges.push({to:a.id,cost:13,core});}
